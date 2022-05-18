@@ -1,7 +1,7 @@
 {
     "results": [
         {
-            "id" : "article-0",
+            "id" : "article0",
             "category" : [
                 "blouse",
                 "tops",
@@ -16,7 +16,7 @@
             "price" : 9.49
         },
         {
-            "id" : "article-1",
+            "id" : "article1",
             "category" : [
                 "robe trapèze",
                 "robe",
@@ -31,7 +31,7 @@
             "price" : 14.49
         },
         {
-            "id" : "article-2",
+            "id" : "article2",
             "category" : [
                 "robe ceinturée",
                 "robe",
@@ -46,7 +46,7 @@
             "price" : 12.99
         },
         {
-            "id" : "article-3",
+            "id" : "article3",
             "category" : [
                 "blouse",
                 "tops",
@@ -63,7 +63,7 @@
             "price" : 11.49
         },
         {
-            "id" : "article-4",
+            "id" : "article4",
             "category" : [
                 "blouse",
                 "tops",
@@ -79,7 +79,7 @@
             "price" : 8.99
         },
         {
-            "id" : "article-5",
+            "id" : "article5",
             "category" : [
                 "short",
                 "bas",
@@ -95,7 +95,7 @@
             "price" : 9.49
         },
         {
-            "id" : "article-6",
+            "id" : "article6",
             "category" : [
                 "Combinaison",
                 "bas",
@@ -115,7 +115,7 @@
             "price" : 13.49
         },
         {
-            "id" : "article-7",
+            "id" : "article7",
             "category" : [
                 "Combinaison",
                 "bas",
@@ -135,7 +135,7 @@
             "price" : 18.49
         },
         {
-            "id" : "article-8",
+            "id" : "article8",
             "category" : [
                 "pantalon",
                 "bas",
@@ -154,7 +154,7 @@
             "price" : 15.49
         },
         {
-            "id" : "article-9",
+            "id" : "article9",
             "category" : [
                 "pantalon",
                 "bas",
@@ -173,7 +173,7 @@
             "price" : 18.49
         }, 
         {
-            "id" : "article-10",
+            "id" : "article10",
             "category" : [
                 "jupe",
                 "bas",

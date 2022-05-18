@@ -26,16 +26,29 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand">LaManu's Clothing</a>
+                <a class="navbar-brand" href="#">LaManu's Clothing</a>
+                
+                    <button type="button" class="btn btn-secondary position-relative mx-5" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" onclick="accessCart()">
+                        <i class="bi bi-cart3 text-light"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger mt-1"
+                            id="panier">0
+                            <span class="visually-hidden">Articles dans votre panier</span>
+                        </span>
+                    </button>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent">
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse">
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
                             <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown">
+                                data-bs-toggle="dropdown" href="#">
                                 Femmes
                             </a>
                             <ul class="dropdown-menu">
@@ -46,7 +59,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
                                 Hommes
                             </a>
                             <ul class="dropdown-menu">
@@ -56,7 +70,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
                                 Enfants
                             </a>
                             <ul class="dropdown-menu">
@@ -66,7 +81,8 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
                                 Beauté
                             </a>
                             <ul class="dropdown-menu">
@@ -76,15 +92,6 @@
                             </ul>
                         </li>
                     </ul>
-                    
-                    <div class="collapse navbar-collapse"></div>
-                    <button type="button" class="btn btn-secondary position-relative me-5" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="accessCart()">
-                        <i class="bi bi-cart3 text-light"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                            id="panier">0
-                            <span class="visually-hidden">Articles dans votre panier</span>
-                        </span>
-                    </button>
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
@@ -99,16 +106,18 @@
                                     image description prix
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn filtres" id="addToCart">Passer au règlement</button>
+                                    <button type="button" class="btn filtres" id="addToCart">Passer au
+                                        règlement</button>
                                     <button type="button" class="btn filtres" data-bs-dismiss="modal">Fermer</button>
-                                    
+
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <form class="d-flex" role="search">
-                        <input class="form-control " type="search" placeholder="Rechercher un article" aria-label="Search">
+                        <input class="form-control " type="search" placeholder="Rechercher un article"
+                            aria-label="Search">
                         <button class="btn btn-outline btn-outline-secondary" type="submit"><i
                                 class="bi bi-search text-light "></i></button>
                     </form>
@@ -117,8 +126,11 @@
         </nav>
     </header>
 
+
+
+
     <div class="row m-0">
-        <div class="col-lg-2 d-lg-block d-none filtres">
+        <div class="col-lg-2 d-lg-block d-none filtres stuck">
             <div class="row mt-2 ms-4 ">
                 <p class="fw-bold ">Catégories</p>
                 <div class="form-check checkbox">
