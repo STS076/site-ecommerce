@@ -17,4 +17,6 @@ body{
 
 .smoll-text {
     font-size: .8em;
+    font-weight: bold;
+    background-color: rgb(230, 230, 230);
 }

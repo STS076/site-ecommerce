@@ -3,15 +3,15 @@ let panier = document.getElementById('panier')
 let panierCount = 0
 let vosArticles = document.getElementById('vosArticles')
 let myArticlesArray = []
+
+
 fetch('dress.json')
-    .then(response =>response.json())
+    .then(response => response.json())
     .then(data => {
         let dress = data.results
-
         dress.forEach(element => {
-            console.log(element.name);
             fashion.innerHTML += `
-                <div class="card mt-2 mb-2" style="width: 14rem;">
+                <div class="card my-2 mx-3" style="width: 14rem;">
                     <div id="carousel${element.id}" class="carousel carousel-dark slide" data-bs-ride="carousel" style="width:14rem;">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="10000">
@@ -32,9 +32,9 @@ fetch('dress.json')
                     </div>
                     <div class="card-body">
                         <p>${element.name}</p>
-                        <div class="d-flex justify-content-evenly">
-                            <div class="badge bg-primary py-3">${element.price}€</div>
-                            <button id="article-${element.id}" class="btn btn-primary smoll-text" onclick="addToCart(id,${element.id})">Ajouter au panier</button>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="fw-bold">${element.price}€</div>
+                            <button id="article-${element.id}" class="btn p-2 smoll-text" onclick="addToCart(id,${element.id})">Ajouter au panier</button>
                         </div>
                     </div>
                 </div>
@@ -43,13 +43,12 @@ fetch('dress.json')
 
     })
 
-    function addToCart(idBtn, idElement) {
-        console.log(idBtn);
-        panierCount++
-        myArticlesArray.push(idElement)
-        // console.log(panierCount);
-        panier.innerHTML = "+ " + panierCount
-        // Object.values(object1)
-        // myArticlesArray.splice(myArticlesArray.indexOf(element), 1)
-        console.log(myArticlesArray);
-    }
+function addToCart(idBtn, idElement) {
+    panierCount++
+    myArticlesArray.push(idElement)
+    // console.log(panierCount);
+    panier.innerHTML = "+ " + panierCount
+    // Object.values(object1)
+    // myArticlesArray.splice(myArticlesArray.indexOf(element), 1)
+    console.log(myArticlesArray);
+}
