@@ -1,7 +1,7 @@
 {
     "results": [
         {
-            "id" : 0,
+            "id" : "article-0",
             "category" : [
                 "blouse",
                 "tops",
@@ -16,7 +16,7 @@
             "price" : 9.49
         },
         {
-            "id" : 1,
+            "id" : "article-1",
             "category" : [
                 "robe trapèze",
                 "robe",
@@ -31,7 +31,7 @@
             "price" : 14.49
         },
         {
-            "id" : 2,
+            "id" : "article-2",
             "category" : [
                 "robe ceinturée",
                 "robe",
@@ -46,7 +46,7 @@
             "price" : 12.99
         },
         {
-            "id" : 3,
+            "id" : "article-3",
             "category" : [
                 "blouse",
                 "tops",
@@ -63,7 +63,7 @@
             "price" : 11.49
         },
         {
-            "id" : 4,
+            "id" : "article-4",
             "category" : [
                 "blouse",
                 "tops",
@@ -79,7 +79,7 @@
             "price" : 8.99
         },
         {
-            "id" : 5,
+            "id" : "article-5",
             "category" : [
                 "short",
                 "bas",
@@ -95,7 +95,7 @@
             "price" : 9.49
         },
         {
-            "id" : 6,
+            "id" : "article-6",
             "category" : [
                 "Combinaison",
                 "bas",
@@ -112,7 +112,85 @@
                 "combinaison-bleue-front.webp",
                 "combinaison-bleue-back.webp"
             ],
-            "price" : 9.49
+            "price" : 13.49
+        },
+        {
+            "id" : "article-7",
+            "category" : [
+                "Combinaison",
+                "bas",
+                "femme",
+                "haut",
+                "unicolor", 
+                "short", 
+                "rose", 
+                "mousseline"
+
+            ],
+            "name" : "Combishort manches bouffantes ceinturé en mousseline ",
+            "imgs" : [
+                "combishort-rose-front.webp",
+                "combishort-rose-back.webp"
+            ],
+            "price" : 18.49
+        },
+        {
+            "id" : "article-8",
+            "category" : [
+                "pantalon",
+                "bas",
+                "femme",
+                "unicolor", 
+                "long", 
+                "noir", 
+                "cordons"
+
+            ],
+            "name" : "Pantalon droit à cordon",
+            "imgs" : [
+                "pantalon-noir-front.webp",
+                "pantalon-noir-back.webp"
+            ],
+            "price" : 15.49
+        },
+        {
+            "id" : "article-9",
+            "category" : [
+                "pantalon",
+                "bas",
+                "femme",
+                "unicolor", 
+                "long", 
+                "bleu", 
+                "jean"
+
+            ],
+            "name" : "Jean mom taille haute ",
+            "imgs" : [
+                "jean-taillehaute-front.webp",
+                "jean-taillehaute-back.webp"
+            ],
+            "price" : 18.49
+        }, 
+        {
+            "id" : "article-10",
+            "category" : [
+                "jupe",
+                "bas",
+                "femme",
+                "unicolor", 
+                "long", 
+                "marron", 
+                "boutons"
+
+            ],
+            "name" : "Jupe évasée avec nœud et boutons",
+            "imgs" : [
+                "jupe-midi-marron-front.webp",
+                "jupe-midi-marron-back.webp"
+            ],
+            "price" : 12.49
         }
+
     ]
 }
