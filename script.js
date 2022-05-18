@@ -8,8 +8,8 @@ fetch('dress.json')
         dress.forEach(element => {
             console.log(element.name);
             fashion.innerHTML += `
-                <div class="card m-1" style="width: 15rem;">
-                    <div id="carousel${element.id}" class="carousel carousel-dark slide" data-bs-ride="carousel" style="width:15rem;">
+                <div class="card" style="width: 14rem;">
+                    <div id="carousel${element.id}" class="carousel carousel-dark slide" data-bs-ride="carousel" style="width:14rem;">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="10000">
                             <img style="width:100%" src="${element.imgs[0]}" alt="">
