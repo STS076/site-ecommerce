@@ -1,0 +1,96 @@
+{
+    "results": [
+        {
+            "id" : 0,
+            "category" : [
+                "blouse",
+                "tops",
+                "t-shits",
+                "femme"
+            ],
+            "name" : "Blouse à détail de dentelle à tulle brodé",
+            "imgs" : [
+                "https://img.ltwebstatic.com/images3_pi/2022/03/30/16486063231d04800597df14824219d22c24ced9fe.webp",
+                "https://img.ltwebstatic.com/images3_pi/2022/03/30/164860632973252b29c96278017b81b2c4e2b2ceea.webp"
+            ],
+            "price" : 9.49
+        },
+        {
+            "id" : 1,
+            "category" : [
+                "robe trapèze",
+                "robe",
+                "femme",
+                "fleuri"
+            ],
+            "name" : "Robe trapèze fleuri froncé",
+            "imgs" : [
+                "https://img.ltwebstatic.com/images3_pi/2022/04/28/1651117527c2059b260df262e6de33fc8f0fdb3b9c.webp",
+                "https://img.ltwebstatic.com/images3_pi/2022/04/28/1651117530271b47fc268ae8dffa0cfde01e3d3527.webp"
+            ],
+            "price" : 14.49
+        },
+        {
+            "id" : 2,
+            "category" : [
+                "robe ceinturée",
+                "robe",
+                "femme",
+                "fleuri"
+            ],
+            "name" : "Robe ceinturée fleuri manches papillon",
+            "imgs" : [
+                "https://img.ltwebstatic.com/images3_pi/2022/03/30/1648604024de5829cff315392ba4d237c0ed276bb2.webp",
+                "https://img.ltwebstatic.com/images3_pi/2022/03/30/16486040091716c96766fd21bc7d3259e9f6a6aa29.webp"
+            ],
+            "price" : 12.99
+        },
+        {
+            "id" : 3,
+            "category" : [
+                "blouse",
+                "tops",
+                "t-shits",
+                "femme",
+                "rayures"
+            ],
+            "name" : "Blouse à rayures à volants à mancherons",
+            "imgs" : [
+                "https://img.ltwebstatic.com/images3_pi/2021/12/21/1640053246372f9bcb05d46a58ce3106f7418f9eeb.webp",
+                "https://img.ltwebstatic.com/images3_pi/2021/12/21/164005323789d8f6ca50eea03b10ce3b75f98886a0.webp"
+            ],
+            "price" : 11.49
+        },
+        {
+            "id" : 4,
+            "category" : [
+                "blouse",
+                "tops",
+                "t-shits",
+                "femme",
+                "fleuri"
+            ],
+            "name" : "Top avec dentelle manches raglan fleuri",
+            "imgs" : [
+                "https://img.ltwebstatic.com/images3_pi/2021/07/07/1625639656469fa7d68678b502f2fc5b577badabbd.webp",
+                "https://img.ltwebstatic.com/images3_pi/2021/07/07/16256396580515a0bc0838e13e2dd2c2312cb0d7a0.webp"
+            ],
+            "price" : 8.99
+        },
+        {
+            "id" : 5,
+            "category" : [
+                "short",
+                "bas",
+                "femme",
+                "unicolore"
+            ],
+            "name" : "Short ceinturé à taille froncée unicolore",
+            "imgs" : [
+                "https://img.ltwebstatic.com/images3_pi/2021/02/23/1614060939f502014f8b91946186a3b19e37c8bb59.webp",
+                "https://img.ltwebstatic.com/images3_pi/2021/02/23/16140609413b645dbd71dc34b11d7d25b8300a974d.webp"
+            ],
+            "price" : 9.49
+        }
+    ]
+}
