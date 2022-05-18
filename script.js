@@ -1,5 +1,8 @@
-
 let fashion = document.getElementById('fashion')
+let panier = document.getElementById('panier')
+let panierCount = 0
+let vosArticles = document.getElementById('vosArticles')
+let myArticlesArray = []
 fetch('dress.json')
     .then(response =>response.json())
     .then(data => {
@@ -29,9 +32,9 @@ fetch('dress.json')
                     </div>
                     <div class="card-body">
                         <p>${element.name}</p>
-                        <div class="d-flex">
-                            <div class="badge bg-primary">${element.price}€</div>
-                            <button class="btn btn-primary text-wrap">Ajouter au panier</button>
+                        <div class="d-flex justify-content-evenly">
+                            <div class="badge bg-primary py-3">${element.price}€</div>
+                            <button id="article-${element.id}" class="btn btn-primary smoll-text" onclick="addToCart(id,${element.id})">Ajouter au panier</button>
                         </div>
                     </div>
                 </div>
@@ -39,3 +42,14 @@ fetch('dress.json')
         });
 
     })
+
+    function addToCart(idBtn, idElement) {
+        console.log(idBtn);
+        panierCount++
+        myArticlesArray.push(idElement)
+        // console.log(panierCount);
+        panier.innerHTML = "+ " + panierCount
+        // Object.values(object1)
+        // myArticlesArray.splice(myArticlesArray.indexOf(element), 1)
+        console.log(myArticlesArray);
+    }
