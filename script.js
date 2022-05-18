@@ -35,7 +35,7 @@ fetch('dress.json')
                         <p>${element.name}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="fw-bold">${element.price}€</div>
-                            <button id="article-${element.id}-btn" class="btn p-2 smoll-text" onclick="addToCart(${element.id})">Ajouter au panier</button>
+                            <button id="${element.id}-btn" class="btn p-2 smoll-text" onclick="addToCart('${element.id}')">Ajouter au panier</button>
                         </div>
                     </div>
                 </div>
@@ -44,14 +44,15 @@ fetch('dress.json')
 
 
     })
+
 function addToCart(idElement) {
     panierCount++
-    myArticlesArray.push(idElement)
-    // console.log(panierCount);
+    // myArticlesArray.push(idElement)
+    console.log(panierCount);
     panier.innerHTML = "+ " + panierCount
     // Object.values(object1)
-    console.log(myArticlesArray);
+    // console.log(myArticlesArray);
     // thisArt = Object.values(json)
-    // dress.splice(dress.indexOf(idElement), 1)
-    console.log(thisArt);
+    dress.splice(dress.indexOf(idElement), 1)
+    // console.log(thisArt);
 }
