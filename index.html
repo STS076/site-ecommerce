@@ -24,64 +24,89 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">LaManu's Clothing</a>
+                <a class="navbar-brand">LaManu's Clothing</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown">
                                 Femmes
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Haut</a></li>
-                                <li><a class="dropdown-item" href="#">Bas</a></li>
-                                <li><a class="dropdown-item" href="#">Chaussures</a></li>
-                                <li><a class="dropdown-item" href="#">Accessoires</a></li>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item">Haut</a></li>
+                                <li><a class="dropdown-item">Bas</a></li>
+                                <li><a class="dropdown-item">Chaussures</a></li>
+                                <li><a class="dropdown-item">Accessoires</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                                 Hommes
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Haut</a></li>
-                                <li><a class="dropdown-item" href="#">Bas</a></li>
-                                <li><a class="dropdown-item" href="#">Chaussures</a></li>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item">Haut</a></li>
+                                <li><a class="dropdown-item">Bas</a></li>
+                                <li><a class="dropdown-item">Chaussures</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                                 Enfants
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Bébés</a></li>
-                                <li><a class="dropdown-item" href="#">3 - 10 ans</a></li>
-                                <li><a class="dropdown-item" href="#">L'été est là !</a></li>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item">Bébés</a></li>
+                                <li><a class="dropdown-item">3 - 10 ans</a></li>
+                                <li><a class="dropdown-item">L'été est là !</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button"data-bs-toggle="dropdown">
                                 Beauté
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Soins peau</a></li>
-                                <li><a class="dropdown-item" href="#">Maquillage</a></li>
-                                <li><a class="dropdown-item" href="#">Cheveux</a></li>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item">Soins peau</a></li>
+                                <li><a class="dropdown-item">Maquillage</a></li>
+                                <li><a class="dropdown-item">Cheveux</a></li>
                             </ul>
                         </li>
                     </ul>
+          
+                    <button type="button" class="btn btn-secondary position-relative me-5" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="accessCart()">
+                        <i class="bi bi-cart3 text-light"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            id="panier">
+                            <span class="visually-hidden">Articles dans votre panier</span>
+                        </span>
+                    </button>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="modal-title fw-bold fs-5" id="exampleModalLabel">Votre Panier</p>
+                                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button> -->
+                                </div>
+                                <div class="modal-body" id="vosArticles">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn filtres" id="addToCart">Ajouter à votre panier</button>
+                                    <button type="button" class="btn filtres" data-bs-dismiss="modal">Fermer</button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <form class="d-flex" role="search">
-                        <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control " type="search" placeholder="Rechercher un article" aria-label="Search">
                         <button class="btn btn-outline btn-outline-secondary" type="submit"><i
                                 class="bi bi-search text-light "></i></button>
                     </form>
@@ -89,70 +114,71 @@
             </div>
         </nav>
     </header>
+
     <div class="row">
         <div class="col-lg-2 d-lg-block d-none filtres">
             <div class="row mt-2 ms-4 ">
                 <p class="fw-bold ">Catégories</p>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input categories" type="checkbox">
+                    <label class="form-check-label">
                         Robes
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         Jupes
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         Pantalons
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label" ">
                         Blouses
                     </label>
                 </div>
-                <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Chaussures
-                    </label>
+                <div class=" form-check checkbox">
+                        <input class="form-check-input" type="checkbox">
+                        <label class="form-check-label">
+                            Chaussures
+                        </label>
                 </div>
             </div>
             <div class="row mt-2 ms-4 ">
                 <p class="fw-bold">Couleurs</p>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         Rose
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         Vert
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         Bleu
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         Noir
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         Blanc
                     </label>
                 </div>
@@ -160,32 +186,32 @@
             <div class="row mt-2 ms-4 ">
                 <p class="fw-bold">Tailles</p>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         34
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         36
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         38
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         40
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         42
                     </label>
                 </div>
@@ -193,26 +219,67 @@
             <div class="row mt-2 ms-4 ">
                 <p class="fw-bold">Longueur</p>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         Mini
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         Midi
                     </label>
                 </div>
                 <div class="form-check checkbox">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
                         Maxi
                     </label>
                 </div>
             </div>
+            <div class="row mt-2 ms-4 ">
+                <p class="fw-bold">Types de col</p>
+                <div class="form-check checkbox">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
+                        Col bateau
+                    </label>
+                </div>
+                <div class="form-check checkbox">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
+                        Col roulé
+                    </label>
+                </div>
+                <div class="form-check checkbox">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
+                        Col rond
+                    </label>
+                </div>
+                <div class="form-check checkbox">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
+                        Col en V
+                    </label>
+                </div>
+                <div class="form-check checkbox">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
+                        Col carré
+                    </label>
+                </div>
+                <div class="form-check checkbox">
+                    <input class="form-check-input" type="checkbox">
+                    <label class="form-check-label">
+                        Col ras du cou
+                    </label>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-10 col-12 m-2" id="fashion">
+
+
+        <div class="col-lg-9 col-12 m-2 d-flex" id="fashion">
 
         </div>
     </div>
