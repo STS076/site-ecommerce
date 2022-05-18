@@ -5,7 +5,7 @@
             "category" : [
                 "blouse",
                 "tops",
-                "t-shits",
+                "blanc",
                 "femme"
             ],
             "name" : "Blouse à détail de dentelle à tulle brodé",
@@ -21,7 +21,7 @@
                 "robe trapèze",
                 "robe",
                 "femme",
-                "fleuri"
+                "rose"
             ],
             "name" : "Robe trapèze fleuri froncé",
             "imgs" : [
@@ -36,7 +36,7 @@
                 "robe ceinturée",
                 "robe",
                 "femme",
-                "fleuri"
+                "bleu"
             ],
             "name" : "Robe ceinturée fleuri manches papillon",
             "imgs" : [
@@ -52,7 +52,8 @@
                 "tops",
                 "t-shits",
                 "femme",
-                "rayures"
+                "rayures",
+                "rouge"   
             ],
             "name" : "Blouse à rayures à volants à mancherons",
             "imgs" : [
@@ -83,9 +84,30 @@
                 "short",
                 "bas",
                 "femme",
-                "unicolore"
+                "unicolore",
+                "vert"
             ],
             "name" : "Short ceinturé à taille froncée unicolore",
+            "imgs" : [
+                "https://img.ltwebstatic.com/images3_pi/2021/02/23/1614060939f502014f8b91946186a3b19e37c8bb59.webp",
+                "https://img.ltwebstatic.com/images3_pi/2021/02/23/16140609413b645dbd71dc34b11d7d25b8300a974d.webp"
+            ],
+            "price" : 9.49
+        },
+        {
+            "id" : 6,
+            "category" : [
+                "Combinaison",
+                "bas",
+                "femme",
+                "haut",
+                "unicolor", 
+                "short", 
+                "bleu", 
+                "bouton"
+
+            ],
+            "name" : "Combishort ceinturé avec boutons ",
             "imgs" : [
                 "https://img.ltwebstatic.com/images3_pi/2021/02/23/1614060939f502014f8b91946186a3b19e37c8bb59.webp",
                 "https://img.ltwebstatic.com/images3_pi/2021/02/23/16140609413b645dbd71dc34b11d7d25b8300a974d.webp"
