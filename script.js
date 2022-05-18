@@ -28,7 +28,11 @@ fetch('dress.json')
                         </button>
                     </div>
                     <div class="card-body">
-                        <p></p>
+                        <p>${element.name}</p>
+                        <div class="d-flex">
+                            <div class="badge bg-primary">${element.price}€</div>
+                            <button class="btn btn-primary text-wrap">Ajouter au panier</button>
+                        </div>
                     </div>
                 </div>
             `
