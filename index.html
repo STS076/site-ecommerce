@@ -24,7 +24,7 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand">LaManu's Clothing</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -66,7 +66,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button"data-bs-toggle="dropdown">
+                            <a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                                 Beauté
                             </a>
                             <ul class="dropdown-menu">
@@ -76,11 +76,11 @@
                             </ul>
                         </li>
                     </ul>
-          
+                    
+                    <div class="collapse navbar-collapse"></div>
                     <button type="button" class="btn btn-secondary position-relative me-5" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="accessCart()">
                         <i class="bi bi-cart3 text-light"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                            id="panier">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" sid="panier">
                             <span class="visually-hidden">Articles dans votre panier</span>
                         </span>
                     </button>
@@ -95,9 +95,10 @@
                                         aria-label="Close"></button> -->
                                 </div>
                                 <div class="modal-body" id="vosArticles">
+                                    image description prix
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn filtres" id="addToCart">Ajouter à votre panier</button>
+                                    <button type="button" class="btn filtres" id="addToCart">Passer au règlement</button>
                                     <button type="button" class="btn filtres" data-bs-dismiss="modal">Fermer</button>
                                     
                                 </div>
@@ -115,7 +116,7 @@
         </nav>
     </header>
 
-    <div class="row mt-5 pt-2">
+    <div class="row">
         <div class="col-lg-2 d-lg-block d-none filtres">
             <div class="row mt-2 ms-4 ">
                 <p class="fw-bold ">Catégories</p>
