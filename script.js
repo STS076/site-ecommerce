@@ -12,8 +12,8 @@ fetch('dress.json')
         let dress = data.results
         dress.forEach(element => {
             fashion.innerHTML += `
-                <div class="card my-2" style="width: 14rem;">
-                    <div id="carousel-${element.id}" class="carousel carousel-dark slide" data-bs-ride="carousel" style="width:14rem;">
+                <div class="card my-2 col-lg-3 col-10 mx-2" >
+                    <div id="carousel-${element.id}" class="carousel carousel-dark slide" data-bs-ride="carousel" >
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="10000">
                             <img style="width:100%" src="img/${element.imgs[0]}" alt="">

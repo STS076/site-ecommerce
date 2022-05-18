@@ -23,7 +23,7 @@
                 "femme",
                 "rose"
             ],
-            "name" : "Robe trapèze fleurie froncée",
+            "name" : "Robe trapèze rouge fleurie froncée",
             "imgs" : [
                 "robe-mini-rouge-front.webp",
                 "robe-mini-rouge-back.webp"
@@ -127,7 +127,7 @@
                 "mousseline"
 
             ],
-            "name" : "Combishort manches bouffantes ceinturé en mousseline ",
+            "name" : "Combishort manches bouffantes ceinturé",
             "imgs" : [
                 "combishort-rose-front.webp",
                 "combishort-rose-back.webp"
@@ -146,7 +146,7 @@
                 "cordons"
 
             ],
-            "name" : "Pantalon droit à cordon",
+            "name" : "Pantalon noir long droit à cordon",
             "imgs" : [
                 "pantalon-noir-front.webp",
                 "pantalon-noir-back.webp"
@@ -165,7 +165,7 @@
                 "jean"
 
             ],
-            "name" : "Jean mom taille haute ",
+            "name" : "Jean mom bleu long taille haute ",
             "imgs" : [
                 "jean-taillehaute-front.webp",
                 "jean-taillehaute-back.webp"
