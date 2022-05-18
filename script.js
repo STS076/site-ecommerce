@@ -12,10 +12,10 @@ fetch('dress.json')
                     <div id="carousel${element.id}" class="carousel carousel-dark slide" data-bs-ride="carousel" style="width:14rem;">
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="10000">
-                            <img style="width:100%" src="${element.imgs[0]}" alt="">
+                            <img style="width:100%" src="img/${element.imgs[0]}" alt="">
                             </div>
                             <div class="carousel-item" data-bs-interval="2000">
-                            <img style="width:100%" src="${element.imgs[1]}" alt="">
+                            <img style="width:100%" src="img/${element.imgs[1]}" alt="">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carousel${element.id}" data-bs-slide="prev">
