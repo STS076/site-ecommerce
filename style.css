@@ -53,3 +53,7 @@ body {
 footer{
     width: 100%;
 }
+
+.displaynone{
+    display: none;
+}

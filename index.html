@@ -24,18 +24,22 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0 pb-2">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">LaManu's Clothing</a>
 
-                <button type="button" class="btn btn-secondary position-relative mx-5 mt-3 mb-2" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal" onclick="accessCart()">
-                    <i class="bi bi-cart3 text-light"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                        id="panier">0
-                        <span class="visually-hidden">Articles dans votre panier</span>
-                    </span>
-                </button>
+                    <button class="btn btn-outline-dark" onclick="register()"><i
+                            class="bi bi-person-circle text-light fs-2"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary position-relative mx-5 mt-3 mb-2"
+                        data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="accessCart()">
+                        <i class="bi bi-cart3 text-light"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            id="panier">0
+                            <span class="visually-hidden">Articles dans votre panier</span>
+                        </span>
+                    </button>
+
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -93,8 +97,7 @@
                     </ul>
 
 
-                    <button class="btn btn-outline-dark" onclick="register()"><i
-                            class="bi bi-person-circle text-light fs-3 me-4"></i></button>
+
                     <form class="d-flex" role="search">
                         <input class="form-control " type="search" placeholder="Rechercher un article"
                             aria-label="Search">
@@ -106,505 +109,506 @@
         </nav>
     </header>
 
-    <div class="row m-0 mt-5 pt-2 d-lg-none" id="mainView">
-        <div class="d-lg-none mt-5">
+    <div class="mt-5 pt-2 displaynone" id="mainView">
+        <div class="row m-0">
+            <div class="d-lg-none mt-5">
 
-            <button class="btn mx-5 mt-3 btn-outline-light text-dark" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Filtres<i
-                    class="bi bi-funnel ms-1"></i></button>
+                <button class="btn mx-5 mt-3 btn-outline-light text-dark" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Filtres<i
+                        class="bi bi-funnel ms-1"></i></button>
 
-            <div class="offcanvas filtres offcanvas-start" data-bs-scroll="true" tabindex="-1"
-                id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-                <div class="offcanvas-header">
-                    <p class="offcanvas-title fw-bold" id="offcanvasWithBothOptionsLabel">Filtres</p>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
-                                    Catégories
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input categories" type="checkbox">
-                                        <label class="form-check-label">
-                                            Robes
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Blouses
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            T-shirts
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label" ">
+                <div class="offcanvas filtres offcanvas-start" data-bs-scroll="true" tabindex="-1"
+                    id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                    <div class="offcanvas-header">
+                        <p class="offcanvas-title fw-bold" id="offcanvasWithBothOptionsLabel">Filtres</p>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
+                                        Catégories
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input categories" type="checkbox">
+                                            <label class="form-check-label">
+                                                Robes
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Blouses
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                T-shirts
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label" ">
                                             Top & débardeurs
                                         </label>
                                     </div>
                                     <div class=" form-check checkbox">
+                                                <input class="form-check-input" type="checkbox">
+                                                <label class="form-check-label">
+                                                    Bas
+                                                </label>
+                                        </div>
+                                        <div class=" form-check checkbox">
                                             <input class="form-check-input" type="checkbox">
                                             <label class="form-check-label">
-                                                Bas
+                                                Ensembles
                                             </label>
-                                    </div>
-                                    <div class=" form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Ensembles
-                                        </label>
-                                    </div>
-                                    <div class=" form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Combinaisons & Bodys
-                                        </label>
+                                        </div>
+                                        <div class=" form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Combinaisons & Bodys
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                    aria-controls="flush-collapseTwo">
-                                    Couleurs
-                                </button>
-                            </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Rose
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Vert
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Bleu
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Noir
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Blanc
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Rouge
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Jaune
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Gris
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseFour" aria-expanded="false"
-                                    aria-controls="flush-collapseFour">
-                                    Longueur
-                                </button>
-                            </h2>
-                            <div id="flush-collapseFour" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Mini
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Midi
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Maxi
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Short
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Pantacourt
-                                        </label>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo">
+                                        Couleurs
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Rose
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Vert
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Bleu
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Noir
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Blanc
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Rouge
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Jaune
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Gris
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseFive" aria-expanded="false"
-                                    aria-controls="flush-collapseFive">
-                                    Type de Col
-                                </button>
-                            </h2>
-                            <div id="flush-collapseFive" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Col bateau
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Col roulé
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Col rond
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Col en V
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Col carré
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Ras-du-cou
-                                        </label>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                        aria-controls="flush-collapseFour">
+                                        Longueur
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Mini
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Midi
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Maxi
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Short
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Pantacourt
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingSix">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseSix" aria-expanded="false"
-                                    aria-controls="flush-collapseSix">
-                                    Type de motifs
-                                </button>
-                            </h2>
-                            <div id="flush-collapseSix" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Unicolore
-                                        </label>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                        aria-controls="flush-collapseFive">
+                                        Type de Col
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Col bateau
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Col roulé
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Col rond
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Col en V
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Col carré
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Ras-du-cou
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Floral
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Rayé
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Carreaux
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Géométrique
-                                        </label>
-                                    </div>
-                                    <div class="form-check checkbox">
-                                        <input class="form-check-input" type="checkbox">
-                                        <label class="form-check-label">
-                                            Poids
-                                        </label>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseSix" aria-expanded="false"
+                                        aria-controls="flush-collapseSix">
+                                        Type de motifs
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseSix" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Unicolore
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Floral
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Rayé
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Carreaux
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Géométrique
+                                            </label>
+                                        </div>
+                                        <div class="form-check checkbox">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label">
+                                                Poids
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
-        </div>
-
-
-        <div class="col-lg-2 d-lg-block d-none filtres">
-            <div class="row sticky-top left mt-4">
-                <div class="row mt-2 ms-4 ">
-                    <p class="fw-bold ">Catégories</p>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input categories" type="checkbox">
-                        <label class="form-check-label">
-                            Robes
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Blouses
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            T-shirts
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label" ">
+            <div class="col-lg-2 d-lg-block d-none filtres">
+                <div class="row sticky-top left mt-4">
+                    <div class="row mt-2 ms-4 ">
+                        <p class="fw-bold ">Catégories</p>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input categories" type="checkbox">
+                            <label class="form-check-label">
+                                Robes
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Blouses
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                T-shirts
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label" ">
                         Top & débardeurs
                     </label>
                 </div>
                 <div class=" form-check checkbox">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label">
+                                    Bas
+                                </label>
+                        </div>
+                        <div class=" form-check checkbox">
                             <input class="form-check-input" type="checkbox">
                             <label class="form-check-label">
-                                Bas
+                                Ensembles
                             </label>
+                        </div>
+                        <div class=" form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Combinaisons & Bodys
+                            </label>
+                        </div>
                     </div>
-                    <div class=" form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Ensembles
-                        </label>
+                    <div class="row mt-2 ms-4 ">
+                        <p class="fw-bold">Couleurs</p>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Rose
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Vert
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Bleu
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Noir
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Blanc
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Rouge
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Jaune
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Gris
+                            </label>
+                        </div>
                     </div>
-                    <div class=" form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Combinaisons & Bodys
-                        </label>
+                    <div class="row mt-2 ms-4 ">
+                        <p class="fw-bold">Longueur</p>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Mini
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Midi
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Maxi
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Short
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Pantacourt
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="row mt-2 ms-4 ">
-                    <p class="fw-bold">Couleurs</p>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Rose
-                        </label>
+                    <div class="row mt-2 ms-4 ">
+                        <p class="fw-bold">Types de col</p>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Col bateau
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Col roulé
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Col rond
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Col en V
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Col carré
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Ras-du-cou
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Vert
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Bleu
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Noir
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Blanc
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Rouge
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Jaune
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Gris
-                        </label>
-                    </div>
-                </div>
-                <div class="row mt-2 ms-4 ">
-                    <p class="fw-bold">Longueur</p>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Mini
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Midi
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Maxi
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Short
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Pantacourt
-                        </label>
-                    </div>
-                </div>
-                <div class="row mt-2 ms-4 ">
-                    <p class="fw-bold">Types de col</p>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Col bateau
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Col roulé
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Col rond
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Col en V
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Col carré
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Ras-du-cou
-                        </label>
-                    </div>
-                </div>
-                <div class="row mt-2 ms-4 ">
-                    <p class="fw-bold">Types de motifs</p>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Unicolore
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Floral
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Rayé
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Carreaux
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Géométrique
-                        </label>
-                    </div>
-                    <div class="form-check checkbox">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">
-                            Poids
-                        </label>
+                    <div class="row mt-2 ms-4 ">
+                        <p class="fw-bold">Types de motifs</p>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Unicolore
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Floral
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Rayé
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Carreaux
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Géométrique
+                            </label>
+                        </div>
+                        <div class="form-check checkbox">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">
+                                Poids
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-10 col-12 mt-2 d-flex flex-wrap justify-content-evenly right" id="fashion">
-
+            <div class="col-lg-10 col-12 mt-2 d-flex flex-wrap justify-content-evenly right" id="fashion">
+            </div>
         </div>
     </div>
+
     <div id="landingPage">
         <div class="row m-0 promo mt-5 mb-3 py-5 text-center">
             <p class="mt-5 fw-bolder gras fst-italic">- 25% sur des milliers de références</p>
@@ -613,10 +617,14 @@
         </div>
         <div class="row m-0 mb-3">
             <img src="img/summerlooks.JPG" style="width:100%" class="m-0 p-0 ">
+            <img src="img/shopbyinfluencer.JPG" style="width:100%" class="m-0 p-0">
+            <img src="img/marquesasuivre.JPG" style="width:100%" class="m-0 p-0">
         </div>
     </div>
 
+    <div id="register">
 
+    </div>
 
     <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
