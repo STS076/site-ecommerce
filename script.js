@@ -43,8 +43,8 @@ fetch('dress.json')
                         </button>
                     </div>
                     <div class="card-body">
-                        <p>${element.name}</p>
-                        <div class="d-flex justify-content-between align-items-center">
+                        <p class="txtSize">${element.name}</p>
+                        <div class="d-flex  justify-content-between align-items-center ">
                             <div class="fw-bold">${element.price}€</div>
                             <button id="${element.id}-btn" class="btn p-2 smoll-text" onclick="addToCart(${count})">Ajouter au panier</button>
                         </div>
