@@ -104,7 +104,12 @@ function accessCart() {
 }
 
 
-
+function showClothes() {
+    let mainView = document.getElementById('mainView');
+    let landingPage = document.getElementById('landingPage')
+    mainView.style.display = 'block';
+    landingPage.style.display = 'none';
+}
 
 
 function deleteItem(element) {
