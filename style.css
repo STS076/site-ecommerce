@@ -1,16 +1,16 @@
-body{
-    font-family: 'Poppins'; 
+body {
+    font-family: 'Poppins';
 }
 
-.filtres{
+.filtres {
     background-color: rgb(239, 239, 239);
 }
 
-.checkbox{
+.checkbox {
     font-size: 0.8rem;
 }
 
-.recherche :hover{
+.recherche :hover {
     background-color: grey;
 }
 
@@ -20,10 +20,36 @@ body{
     background-color: rgb(230, 230, 230);
 }
 
-.taille{
+.taille {
     width: 3rem;
 }
 
-.txtSize{
-    height: 3rem;
+.txtSize {
+    height: 4rem;
+}
+
+.promo{
+    background-color: rgb(210, 47, 210);
+    color: white;
+}
+.code{
+    font-size: 0.8rem;
+    color: white;
+}
+.gras{
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.logo img{
+    width: 3rem;
+    height: auto;
+}
+
+.pieds{
+    font-size: 0.9rem;   
+}
+
+footer{
+    width: 100%;
 }

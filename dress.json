@@ -18,10 +18,11 @@
         {
             "id" : "article1",
             "category" : [
-                "robe trapèze",
                 "robe",
                 "femme",
-                "rose"
+                "rose", 
+                "floral", 
+                "col rond"
             ],
             "name" : "Robe trapèze rouge fleurie froncée",
             "imgs" : [
@@ -33,10 +34,12 @@
         {
             "id" : "article2",
             "category" : [
-                "robe ceinturée",
                 "robe",
                 "femme",
-                "bleu"
+                "bleu", 
+                "blanc", 
+                "mini", 
+                "floral"
             ],
             "name" : "Robe ceinturée fleurie manches papillon",
             "imgs" : [
@@ -190,7 +193,134 @@
                 "jupe-midi-marron-back.webp"
             ],
             "price" : 12.49
-        }
+        }, 
+        {
+            "id" : "article11",
+            "category" : [
+                "Ensemble",
+                "fleuri",
+                "femme",
+                "imprimé", 
+                "court", 
+                "blanc", 
+                "vert"
 
+            ],
+            "name" : "Top à fines brides court à imprimé floral avec Short à taille froncée ",
+            "imgs" : [
+                "ensemble-short-top-fleurs-front.webp",
+                "ensemble-short-top-fleurs-back.webp"
+            ],
+            "price" : 12.99
+        }, 
+        {
+            "id" : "article12",
+            "category" : [
+                "Robe",
+                "fleuri",
+                "Géométrique",
+                "imprimé", 
+                "maxi", 
+                "blanc", 
+                "noir", 
+                "col en v"
+
+            ],
+            "name" : "Robe à imprimé géométrique à poignet froncé manches bouffantes ",
+            "imgs" : [
+                "robe-maxi-noire-géométrique-front.webp",
+                "robe-maxi-noire-géométrique-back.webp"
+            ],
+            "price" : 18.99
+        }, 
+        {
+            "id" : "article13",
+            "category" : [
+                "débardeur",
+                "rouge",
+                "carreaux",
+                "imprimé", 
+                "mini",
+                "noir"
+
+            ],
+            "name" : "Top à fines brides à carreaux avec plis ",
+            "imgs" : [
+                "débardeur-carreaux-rouge-noir-front.webp",
+                "débardeur-carreaux-rouge-noir-back.webp"
+            ],
+            "price" : 3.49
+        }, 
+        {
+            "id" : "article14",
+            "category" : [
+                "tshirt",
+                "blanc",
+                "noir",
+                "imprimé", 
+                "rayures",
+                "noir"
+
+            ],
+            "name" : "Frenchy T-shirt à rayures à applique cœur avec dentelle ",
+            "imgs" : [
+                "tshirt-rayures-blanc-front.webp",
+                "tshirt-rayures-blanc-back.webp"
+            ],
+            "price" : 4.99
+        }, 
+        {
+            "id" : "article15",
+            "category" : [
+                "ensemble",
+                "blanc",
+                "rouge",
+                "imprimé", 
+                "poids",
+                "court", 
+                "ras du cou"
+
+            ],
+            "name" : "Top rad-du-cou à pois & Short",
+            "imgs" : [
+                "ensemble-rouge-poids-front.webp",
+                "ensemble-rouge-poids-back.webp"
+            ],
+            "price" : 15.49
+        }, 
+        {
+            "id" : "article16",
+            "category" : [
+                "jupe",
+                "bas",
+                "jaune",
+                "unicolor", 
+                "court"
+
+            ],
+            "name" : "Jupe courte taille haute à plis trapèze ",
+            "imgs" : [
+                "jupe-plissée-jaune-front.webp",
+                "jupe-plissée-jaune-back.webp"
+            ],
+            "price" : 12.49
+        }, 
+        {
+            "id" : "article17",
+            "category" : [
+                "robe",
+                "femme",
+                "vert",
+                "unicolor", 
+                "midi"
+
+            ],
+            "name" : "Robe sans manches unicolore avec cordon",
+            "imgs" : [
+                "robe-verte-midi-front.webp",
+                "robe-verte-midi-back.webp"
+            ],
+            "price" : 18.49
+        }
     ]
 }
