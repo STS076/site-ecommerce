@@ -1,5 +1,5 @@
 let fashion = document.getElementById('fashion')
-let panier = document.getElementById('panier') 
+let panier = document.getElementById('panier')
 let vosArticles = document.getElementById('vosArticles')
 let myCartArray = []
 let allArticlesArray = []
@@ -51,22 +51,18 @@ fetch('dress.json')
                     </div>
                 </div>
             `
-            count ++
+            count++
         });
     })
 
-function addToCart(element) {  
+function addToCart(element) {
     panierCount++
     panier.innerHTML = "+ " + panierCount
     myCartArray.push(allArticlesArray[element])
     console.log(myCartArray)
-}
 
-function accessCart() {
-    
-    // let retrieve = localStorage.getItem("monTableau")
-    // retrieve = retrieve.split(",")
     myCartArray.forEach(element => {
+        // nbId = document.getElementById('nb' + countCard).value
         vosArticles.innerHTML += `<div class="card mt-1" id="card${countCard}" >
         <div class="row g-0">
           <div class="col-lg-4 col-4">
@@ -74,21 +70,52 @@ function accessCart() {
           </div>
           <div class="col-lg-8 col-8">
             <div class="card-body">
-              <p class="card-title fw-bold fs-5">${element.name}</p>
-              <p class="card-text">${element.price}€</p>
-              
-              <input type="number" class="taille"></input>
-              <button class="btn filtres text-dark fw-bold btn-sm d-flex align-items-end " onclick="deleteItem('card${countCard}')">Supprimer</button>
+                <p class="card-title fw-bold fs-5">${element.name}</p>
+                <div class=" d-flex justify-content-evenly">
+                    <p class="card-text">${element.price}€</p>
+                    <div class="d-flex">
+                        <input id="nb${countCard}" type="number" class="taille" min="1" value="1"></input>
+                        <button class="btn filtres text-dark fw-bold btn-sm d-flex align-items-end " onclick="deleteItem('card${countCard}')">Supprimer</button>
+                    </div>
+                    <p class="card-text" id="priceAll${countCard}">€</p>
+                </div>
             </div>
-            
           </div>
         </div>
       </div>`
-      countCard ++
+        countCard++
     });
+
 }
+
+function accessCart() {
+    for (let i = 0; i < vosArticles.length; i++) {
+        let nbId = document.getElementById('nb' + i)
+        // console.log(nbId);
+        nbId.addEventListener('click', function priceArticle() {
+                console.log(nbId.value);
+        })
+    }
+    // 
+
+
+
+    // console.log(document.getElementById('nb1'))
+}
+
+
+function showClothes() {
+    let mainView = document.getElementById('mainView');
+    let landingPage = document.getElementById('landingPage')
+    mainView.style.display = 'block';
+    landingPage.style.display = 'none';
+}
+
 
 function deleteItem(element) {
     let card = document.getElementById(element)
     card.remove()
+    myCartArray.splice(card, 1)
+    panierCount--
+    panier.innerHTML = "+ " + panierCount
 }
