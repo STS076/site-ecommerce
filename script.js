@@ -4,6 +4,7 @@ let vosArticles = document.getElementById('vosArticles')
 let myCartArray = []
 let allArticlesArray = []
 let panierCount = 0
+let countCard = 0
 
 // panier.innerHTML = "+ " + localStorage.getItem("mycount")
 
@@ -62,10 +63,11 @@ function addToCart(element) {
 }
 
 function accessCart() {
+    
     // let retrieve = localStorage.getItem("monTableau")
     // retrieve = retrieve.split(",")
     myCartArray.forEach(element => {
-        vosArticles.innerHTML += `<div class="card mt-1" >
+        vosArticles.innerHTML += `<div class="card mt-1" id="card${countCard}" >
         <div class="row g-0">
           <div class="col-lg-4 col-4">
           <img  style="width:100%"  src="img/${element.imgs[0]}" alt="vêtement dans votre panier">
@@ -76,13 +78,17 @@ function accessCart() {
               <p class="card-text">${element.price}€</p>
               
               <input type="number" class="taille"></input>
-              <button class="btn filtres text-dark fw-bold btn-sm d-flex align-items-end " onclick="deleteItem()">Supprimer</button>
+              <button class="btn filtres text-dark fw-bold btn-sm d-flex align-items-end " onclick="deleteItem('card${countCard}')">Supprimer</button>
             </div>
             
           </div>
         </div>
       </div>`
+      countCard ++
     });
 }
 
-
+function deleteItem(element) {
+    let card = document.getElementById(element)
+    card.remove()
+}
