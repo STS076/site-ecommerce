@@ -1,7 +1,6 @@
 let fashion = document.getElementById('fashion')
 let panier = document.getElementById('panier')
 let vosArticles = document.getElementById('vosArticles')
-
 let password = document.getElementById("password")
 let name = document.getElementById("name")
 let surname = document.getElementById("surname")
@@ -62,19 +61,12 @@ fetch('dress.json')
             `
             count++
         });
-<<<<<<< HEAD
-
-        
-=======
         console.log(allArticlesArray);
->>>>>>> 58bbbde49d393c94460a0d7703e985273889a1c3
     })
 
 function addToCart(element) {
     panierCount++
     panier.innerHTML = "+ " + panierCount
-   
-
 
     if (checkItem(myCartArray, 'article' + element) == true) {
         // element.quantity++
@@ -118,7 +110,7 @@ function addToCart(element) {
         countCard++
     });
 
-   
+
 
     // if (element.quantity == 0) {
 
@@ -137,16 +129,18 @@ function addToCart(element) {
 
 
 }
- function checkItem(array, item) {
-        let sophie = false;
-        array.forEach(element => {
-            if (element.id == item) {
-                element.quantity++
-                sophie = true;
-            }
-        });
-        return sophie;
-    }
+
+function checkItem(array, item) {
+    let sophie = false;
+    array.forEach(element => {
+        if (element.id == item) {
+            element.quantity++
+            sophie = true;
+        }
+    });
+    return sophie;
+}
+
 function accessCart() {
     myCartArray
     // let nbId = document.getElementById('nb')
@@ -167,7 +161,6 @@ function register() {
     registerYourself.style.display = "block";
 }
 
-
 function showClothes() {
     let mainView = document.getElementById('mainView');
     let landingPage = document.getElementById('landingPage')
@@ -176,7 +169,6 @@ function showClothes() {
     landingPage.style.display = 'none';
     registerYourself.style.display = "none";
 }
-
 
 function deleteItem(element) {
     let card = document.getElementById(element)
@@ -253,8 +245,7 @@ function cleanError(id) {
     background.style.backgroundColor = ""
 }
 
-
-function trierArticles(){
+function trierArticles() {
     let robes = document.getElementById("robes")
     let blouse = document.getElementById("blouse")
     let tshirt = document.getElementById("tshirt")
@@ -264,14 +255,52 @@ function trierArticles(){
     let combinaisons = document.getElementById("combinaisons")
 
     allArticlesArray.forEach(element => {
-        if (robes.checked == true){
-            fashion.innerHTML += element.category.indexOf("robe")
-            console.log(robes)
-        } else {
-            mainView.style.display = 'block';
-        }
+        element.category.forEach(filterCategories => {
+            if (filterCategories != "robe" && robes.checked == true ) {
+                return;
+            }
+            switch (element){
+                case "robe" : 
+                fashion.innerHTML = filterCards(element); 
+                break
+            }
+            // console.log(element)
+            // fashion.innerHTML = filterCards(element)
+            console.log(filterCards(element))
+        })
     });
-
- 
+     
 }
 
+function filterCards(element) {
+    let filterCount = 0
+    fashion.innerHTML += `<div class="card my-2 col-lg-3 col-10 mx-2" >
+        <div id="carousel-${element.id}" class="carousel carousel-dark slide" data-bs-ride="carousel" >
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                <img style="width:100%" src="img/${element.imgs[0]}" alt="vue vêtement de face">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                <img style="width:100%" src="img/${element.imgs[1]}" alt="vue vêtement de dos">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-${element.id}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-${element.id}" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="card-body">
+            <p class="txtSize">${element.name}</p>
+            <div class="d-flex  justify-content-between align-items-center ">
+                <div class="fw-bold">${element.price}€</div>
+                <button id="${element.id}-btn" class="btn p-2 smoll-text" onclick="addToCart(${filterCount})">Ajouter au panier</button>
+            </div>
+        </div>
+    </div>
+    `
+    filterCount++
+}

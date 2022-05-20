@@ -117,7 +117,7 @@
         {
             "id" : "article6",
             "category" : [
-                "Combinaison",
+                "combinaison",
                 "bas",
                 "femme",
                 "haut",
@@ -140,7 +140,7 @@
         {
             "id" : "article7",
             "category" : [
-                "Combinaison",
+                "combinaison",
                 "bas",
                 "femme",
                 "haut",
@@ -226,7 +226,7 @@
         {
             "id" : "article11",
             "category" : [
-                "Ensemble",
+                "ensemble",
                 "fleuri",
                 "femme",
                 "imprimé", 
@@ -248,9 +248,9 @@
         {
             "id" : "article12",
             "category" : [
-                "Robe",
+                "robe",
                 "fleuri",
-                "Géométrique",
+                "géométrique",
                 "imprimé", 
                 "maxi", 
                 "blanc", 
@@ -258,7 +258,7 @@
                 "col en v"
 
             ],
-            "name" : "Robe à imprimé géométrique à poignet froncé manches bouffantes ",
+            "name" : "Robe à imprimé géométrique à poignet froncé ",
             "imgs" : [
                 "robe-maxi-noire-géométrique-front.webp",
                 "robe-maxi-noire-géométrique-back.webp"
