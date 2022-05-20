@@ -16,7 +16,7 @@
                 "blouse-dentelle-blanc-back.webp"
             ],
             "price" : 9.49, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         },
         {
@@ -35,7 +35,7 @@
                 "robe-mini-rouge-back.webp"
             ],
             "price" : 14.49, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         },
         {
@@ -54,7 +54,7 @@
                 "robe-bicolore-fleurie-back.webp"
             ],
             "price" : 12.99, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         },
         {
@@ -73,7 +73,7 @@
                 "blouse-rayée-rouge-back.webp"
             ],
             "price" : 11.49, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         },
         {
@@ -92,7 +92,7 @@
                 "blouse-marine-fleurie-back.webp"
             ],
             "price" : 8.99, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         },
         {
@@ -111,7 +111,7 @@
                 "short-vert-back.webp"
             ],
             "price" : 9.49, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         },
         {
@@ -134,7 +134,7 @@
                 "combinaison-bleue-back.webp"
             ],
             "price" : 13.49, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         },
         {
@@ -157,7 +157,7 @@
                 "combishort-rose-back.webp"
             ],
             "price" : 18.49, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         },
         {
@@ -178,7 +178,7 @@
                 "pantalon-noir-back.webp"
             ],
             "price" : 15.49, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         },
         {
@@ -199,7 +199,7 @@
                 "jean-taillehaute-back.webp"
             ],
             "price" : 18.49, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         }, 
         {
@@ -220,7 +220,7 @@
                 "jupe-midi-marron-back.webp"
             ],
             "price" : 12.49, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         }, 
         {
@@ -242,7 +242,7 @@
                 "ensemble-short-top-fleurs-back.webp"
             ],
             "price" : 12.99, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         }, 
         {
@@ -264,7 +264,7 @@
                 "robe-maxi-noire-géométrique-back.webp"
             ],
             "price" : 18.99, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         }, 
         {
@@ -285,7 +285,7 @@
                 "débardeur-carreaux-rouge-noir-back.webp"
             ],
             "price" : 3.49,
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         }, 
         {
@@ -305,7 +305,7 @@
                 "tshirt-rayures-blanc-back.webp"
             ],
             "price" : 4.99,
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         }, 
         {
@@ -326,7 +326,7 @@
                 "ensemble-rouge-poids-back.webp"
             ],
             "price" : 15.49, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         }, 
         {
@@ -345,7 +345,7 @@
                 "jupe-plissée-jaune-back.webp"
             ],
             "price" : 12.49, 
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         }, 
         {
@@ -365,7 +365,7 @@
                 "robe-verte-midi-back.webp"
             ],
             "price" : 18.49,
-            "quantity": 0,
+            "quantity": 1,
             "priceByQuantity" : 0
         }
     ]

@@ -62,51 +62,94 @@ fetch('dress.json')
             `
             count++
         });
+<<<<<<< HEAD
 
         
+=======
+        console.log(allArticlesArray);
+>>>>>>> 58bbbde49d393c94460a0d7703e985273889a1c3
     })
 
 function addToCart(element) {
     panierCount++
     panier.innerHTML = "+ " + panierCount
-    myCartArray.push(allArticlesArray[element])
-    console.log(myCartArray)
+   
+
+
+    if (checkItem(myCartArray, 'article' + element) == true) {
+        // element.quantity++
+        console.log('augmenter quantité');
+
+    } else {
+        myCartArray.push(allArticlesArray[element])
+    }
+
+    console.log(myCartArray);
+
     vosArticles.innerHTML = '';
 
     myCartArray.forEach(element => {
+        // element.quantity++
         vosArticles.innerHTML += `
-            <div class="card mt-1" id="card${countCard}" >
-                <div class="row g-0">
-                    <div class="col-lg-2 col-2">
-                        <img  style="width:100%" src="img/${element.imgs[0]}" alt="vêtement dans votre panier">
-                    </div>
-                    <div class="col-lg-10 col-10">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between mb-2">
-                                <p class="card-title fw-bold">${element.name}</p>
-                                <a type="button" class="mx-1 aH my-0 p-0 text-dark fw-bold btn-sm d-flex align-items-end " onclick="deleteItem('card${countCard}')">
-                                    <i class="bi bi-trash3"></i>
-                                </a>
-                            </div>
-                            <div class="d-flex justify-content-evenly">
-                                <p class="mx-1 card-title">${element.id}</p>
-                                <p class="mx-1 card-text">${element.price}€</p>
-                                <input id="nb${element.id}" type="number" class="mx-1 p-0 taille" min="1" value="1">${element.quantity}</input>
-                                <p class="mx-1 card-text" id="priceAll${element.id}">${element.priceByQuantity}€</p>
+                <div class="card mt-1" id="card${countCard}" >
+                    <div class="row g-0">
+                        <div class="col-lg-2 col-2">
+                            <img  style="width:100%" src="img/${element.imgs[0]}" alt="vêtement dans votre panier">
+                        </div>
+                        <div class="col-lg-10 col-10">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <p class="card-title fw-bold">${element.name}</p>
+                                    <a type="button" class="mx-1 aH my-0 p-0 text-dark fw-bold btn-sm d-flex align-items-end " onclick="deleteItem('card${countCard}')">
+                                        <i class="bi bi-trash3"></i>
+                                    </a>
+                                </div>
+                                <div class="d-flex justify-content-evenly">
+                                    <p class="mx-1 card-title">${element.id}</p>
+                                    <p class="mx-1 card-text">${element.price}€</p>
+                                    <input id="nb${element.id}" type="number" class="mx-1 p-0 taille" min="1" value="${element.quantity}">
+                                    <p class="mx-1 card-text" id="priceAll${element.id}">${element.priceByQuantity}€</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        `;
+            `;
         countCard++
     });
 
-}
+   
 
+    // if (element.quantity == 0) {
+
+    // } else {
+    //     element.quantity++
+    //     // let nbId = document.getElementById('nb' + element.id)
+    //     // console.log(nbId);
+    //     // nbId.value = element.quantity++
+
+    // }
+
+    //     // element[quantity]++;
+    //     // element[priceByQuantity] = element.quantity * element.price
+
+    //    
+
+
+}
+ function checkItem(array, item) {
+        let sophie = false;
+        array.forEach(element => {
+            if (element.id == item) {
+                element.quantity++
+                sophie = true;
+            }
+        });
+        return sophie;
+    }
 function accessCart() {
     myCartArray
-        // let nbId = document.getElementById('nb')
+    // let nbId = document.getElementById('nb')
 
 
     // for (let i = 0; i < vosArticles.length; i++) {
