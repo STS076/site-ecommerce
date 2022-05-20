@@ -62,7 +62,12 @@ fetch('dress.json')
             `
             count++
         });
+<<<<<<< HEAD
+
+        
+=======
         console.log(allArticlesArray);
+>>>>>>> 58bbbde49d393c94460a0d7703e985273889a1c3
     })
 
 function addToCart(element) {
@@ -225,3 +230,26 @@ function cleanError(id) {
     let background = document.getElementById(id)
     background.style.backgroundColor = ""
 }
+
+
+function trierArticles(){
+    let robes = document.getElementById("robes")
+    let blouse = document.getElementById("blouse")
+    let tshirt = document.getElementById("tshirt")
+    let debardeur = document.getElementById("debardeur")
+    let bas = document.getElementById("bas")
+    let ensembles = document.getElementById("ensembles")
+    let combinaisons = document.getElementById("combinaisons")
+
+    allArticlesArray.forEach(element => {
+        if (robes.checked == true){
+            fashion.innerHTML += element.category.indexOf("robe")
+            console.log(robes)
+        } else {
+            mainView.style.display = 'block';
+        }
+    });
+
+ 
+}
+
