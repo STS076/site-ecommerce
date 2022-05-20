@@ -78,11 +78,11 @@ function addToCart(element) {
     } else {
         myCartArray.push(allArticlesArray[element])
     }
+    
+    console.log(sousTotalClacul(myCartArray));
 
     console.log(myCartArray);
-
     vosArticles.innerHTML = '';
-
     myCartArray.forEach(element => {
         // element.quantity++
         vosArticles.innerHTML += `
@@ -113,24 +113,15 @@ function addToCart(element) {
         countCard++
     });
 
-   
-
-    // if (element.quantity == 0) {
-
-    // } else {
-    //     element.quantity++
-    //     // let nbId = document.getElementById('nb' + element.id)
-    //     // console.log(nbId);
-    //     // nbId.value = element.quantity++
-
-    // }
-
-    //     // element[quantity]++;
-    //     // element[priceByQuantity] = element.quantity * element.price
-
-    //    
-
-
+    //  let resultSousTotal = sousTotalClacul()
+}
+function sousTotalClacul(array) {
+    console.log('sous toltal');
+    // let resultSousTotal
+    // array.forEach(element => {
+    //     resultSousTotal =  element.quantity * element.price
+    //     return resultSousTotal
+    // });
 }
  function checkItem(array, item) {
         let sophie = false;
@@ -142,19 +133,6 @@ function addToCart(element) {
         });
         return sophie;
     }
-function accessCart() {
-    myCartArray
-    // let nbId = document.getElementById('nb')
-
-
-    // for (let i = 0; i < vosArticles.length; i++) {
-    //     // console.log(nbId);
-    //     nbId.addEventListener('click', function priceArticle() {
-    //         console.log(nbId.value);
-    //     })
-    // }
-
-}
 
 function register() {
     mainView.style.display = 'none';
