@@ -6,14 +6,18 @@
                 "blouse",
                 "tops",
                 "blanc",
-                "femme"
+                "femme", 
+                "unicolor", 
+                "col en v"
             ],
             "name" : "Blouse à détails de dentelle à tulle brodé",
             "imgs" : [
                 "blouse-dentelle-blanc-front.webp",
                 "blouse-dentelle-blanc-back.webp"
             ],
-            "price" : 9.49
+            "price" : 9.49, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         },
         {
             "id" : "article1",
@@ -22,14 +26,17 @@
                 "femme",
                 "rose", 
                 "floral", 
-                "col rond"
+                "col rond", 
+                "mini"
             ],
             "name" : "Robe trapèze rouge fleurie froncée",
             "imgs" : [
                 "robe-mini-rouge-front.webp",
                 "robe-mini-rouge-back.webp"
             ],
-            "price" : 14.49
+            "price" : 14.49, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         },
         {
             "id" : "article2",
@@ -46,7 +53,9 @@
                 "robe-bicolore-fleurie-front.webp",
                 "robe-bicolore-fleurie-back.webp"
             ],
-            "price" : 12.99
+            "price" : 12.99, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         },
         {
             "id" : "article3",
@@ -63,7 +72,9 @@
                 "blouse-rayée-rouge-front.webp",
                 "blouse-rayée-rouge-back.webp"
             ],
-            "price" : 11.49
+            "price" : 11.49, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         },
         {
             "id" : "article4",
@@ -72,14 +83,17 @@
                 "tops",
                 "t-shits",
                 "femme",
-                "fleuri"
+                "floral", 
+                "col"
             ],
             "name" : "Top avec dentelle manches raglan fleuri",
             "imgs" : [
                 "blouse-marine-fleurie-front.webp",
                 "blouse-marine-fleurie-back.webp"
             ],
-            "price" : 8.99
+            "price" : 8.99, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         },
         {
             "id" : "article5",
@@ -88,14 +102,17 @@
                 "bas",
                 "femme",
                 "unicolore",
-                "vert"
+                "vert", 
+                "mini"
             ],
             "name" : "Short ceinturé à taille froncée unicolore",
             "imgs" : [
                 "short-vert-front.webp",
                 "short-vert-back.webp"
             ],
-            "price" : 9.49
+            "price" : 9.49, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         },
         {
             "id" : "article6",
@@ -107,7 +124,8 @@
                 "unicolor", 
                 "short", 
                 "bleu", 
-                "bouton"
+                "bouton", 
+                "col carré"
 
             ],
             "name" : "Combishort ceinturé avec boutons ",
@@ -115,7 +133,9 @@
                 "combinaison-bleue-front.webp",
                 "combinaison-bleue-back.webp"
             ],
-            "price" : 13.49
+            "price" : 13.49, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         },
         {
             "id" : "article7",
@@ -127,7 +147,8 @@
                 "unicolor", 
                 "short", 
                 "rose", 
-                "mousseline"
+                "mousseline", 
+                "col en v"
 
             ],
             "name" : "Combishort manches bouffantes ceinturé",
@@ -135,7 +156,9 @@
                 "combishort-rose-front.webp",
                 "combishort-rose-back.webp"
             ],
-            "price" : 18.49
+            "price" : 18.49, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         },
         {
             "id" : "article8",
@@ -154,7 +177,9 @@
                 "pantalon-noir-front.webp",
                 "pantalon-noir-back.webp"
             ],
-            "price" : 15.49
+            "price" : 15.49, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         },
         {
             "id" : "article9",
@@ -173,7 +198,9 @@
                 "jean-taillehaute-front.webp",
                 "jean-taillehaute-back.webp"
             ],
-            "price" : 18.49
+            "price" : 18.49, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         }, 
         {
             "id" : "article10",
@@ -182,7 +209,7 @@
                 "bas",
                 "femme",
                 "unicolor", 
-                "long", 
+                "midi", 
                 "marron", 
                 "boutons"
 
@@ -192,7 +219,9 @@
                 "jupe-midi-marron-front.webp",
                 "jupe-midi-marron-back.webp"
             ],
-            "price" : 12.49
+            "price" : 12.49, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         }, 
         {
             "id" : "article11",
@@ -203,7 +232,8 @@
                 "imprimé", 
                 "court", 
                 "blanc", 
-                "vert"
+                "vert", 
+                "col en v"
 
             ],
             "name" : "Top à fines brides court à imprimé floral avec Short à taille froncée ",
@@ -211,7 +241,9 @@
                 "ensemble-short-top-fleurs-front.webp",
                 "ensemble-short-top-fleurs-back.webp"
             ],
-            "price" : 12.99
+            "price" : 12.99, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         }, 
         {
             "id" : "article12",
@@ -231,7 +263,9 @@
                 "robe-maxi-noire-géométrique-front.webp",
                 "robe-maxi-noire-géométrique-back.webp"
             ],
-            "price" : 18.99
+            "price" : 18.99, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         }, 
         {
             "id" : "article13",
@@ -241,7 +275,8 @@
                 "carreaux",
                 "imprimé", 
                 "mini",
-                "noir"
+                "noir", 
+                "col en v"
 
             ],
             "name" : "Top à fines brides à carreaux avec plis ",
@@ -249,7 +284,9 @@
                 "débardeur-carreaux-rouge-noir-front.webp",
                 "débardeur-carreaux-rouge-noir-back.webp"
             ],
-            "price" : 3.49
+            "price" : 3.49,
+            "quantity": 0,
+            "priceByQuantity" : 0
         }, 
         {
             "id" : "article14",
@@ -267,7 +304,9 @@
                 "tshirt-rayures-blanc-front.webp",
                 "tshirt-rayures-blanc-back.webp"
             ],
-            "price" : 4.99
+            "price" : 4.99,
+            "quantity": 0,
+            "priceByQuantity" : 0
         }, 
         {
             "id" : "article15",
@@ -286,7 +325,9 @@
                 "ensemble-rouge-poids-front.webp",
                 "ensemble-rouge-poids-back.webp"
             ],
-            "price" : 15.49
+            "price" : 15.49, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         }, 
         {
             "id" : "article16",
@@ -303,7 +344,9 @@
                 "jupe-plissée-jaune-front.webp",
                 "jupe-plissée-jaune-back.webp"
             ],
-            "price" : 12.49
+            "price" : 12.49, 
+            "quantity": 0,
+            "priceByQuantity" : 0
         }, 
         {
             "id" : "article17",
@@ -312,7 +355,8 @@
                 "femme",
                 "vert",
                 "unicolor", 
-                "midi"
+                "midi", 
+                "col en v"
 
             ],
             "name" : "Robe sans manches unicolore avec cordon",
@@ -320,7 +364,9 @@
                 "robe-verte-midi-front.webp",
                 "robe-verte-midi-back.webp"
             ],
-            "price" : 18.49
+            "price" : 18.49,
+            "quantity": 0,
+            "priceByQuantity" : 0
         }
     ]
 }
