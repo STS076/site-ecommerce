@@ -69,45 +69,54 @@ function addToCart(element) {
     panier.innerHTML = "+ " + panierCount
     myCartArray.push(allArticlesArray[element])
     console.log(myCartArray)
+    vosArticles.innerHTML = '';
 
     myCartArray.forEach(element => {
-        // nbId = document.getElementById('nb' + countCard).value
-        vosArticles.innerHTML += `<div class="card mt-1" id="card${countCard}" >
-        <div class="row g-0">
-          <div class="col-lg-4 col-4">
-          <img  style="width:100%"  src="img/${element.imgs[0]}" alt="vêtement dans votre panier">
-          </div>
-          <div class="col-lg-8 col-8">
-            <div class="card-body">
-                <p class="card-title fw-bold fs-5">${element.name}</p>
-                <div class=" d-flex justify-content-evenly">
-                    <p class="card-text">${element.price}€</p>
-                    <div class="d-flex">
-                        <input id="nb${countCard}" type="number" class="taille" min="1" value="1"></input>
-                        <button class="btn filtres text-dark fw-bold btn-sm d-flex align-items-end " onclick="deleteItem('card${countCard}')">Supprimer</button>
+        vosArticles.innerHTML += `
+            <div class="card mt-1" id="card${countCard}" >
+                <div class="row g-0">
+                    <div class="col-lg-2 col-2">
+                        <img  style="width:100%" src="img/${element.imgs[0]}" alt="vêtement dans votre panier">
                     </div>
-                    <p class="card-text" id="priceAll${countCard}">€</p>
+                    <div class="col-lg-10 col-10">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <p class="card-title fw-bold">${element.name}</p>
+                                <a type="button" class="mx-1 aH my-0 p-0 text-dark fw-bold btn-sm d-flex align-items-end " onclick="deleteItem('card${countCard}')">
+                                    <i class="bi bi-trash3"></i>
+                                </a>
+                            </div>
+                            <div class="d-flex justify-content-evenly">
+                                <p class="mx-1 card-title">${element.id}</p>
+                                <p class="mx-1 card-text">${element.price}€</p>
+                                <input id="nb${element.id}" type="number" class="mx-1 p-0 taille" min="1" value="1">${element.quantity}</input>
+                                <p class="mx-1 card-text" id="priceAll${element.id}">${element.priceByQuantity}€</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </div>
-        </div>
-      </div>`
+        `;
         countCard++
     });
 
 }
 
 function accessCart() {
-    for (let i = 0; i < vosArticles.length; i++) {
-        let nbId = document.getElementById('nb' + i)
-        // console.log(nbId);
-        nbId.addEventListener('click', function priceArticle() {
-                console.log(nbId.value);
-        })
-    }
+    myCartArray
+        // let nbId = document.getElementById('nb')
+
+
+    // for (let i = 0; i < vosArticles.length; i++) {
+    //     // console.log(nbId);
+    //     nbId.addEventListener('click', function priceArticle() {
+    //         console.log(nbId.value);
+    //     })
+    // }
 
 }
-function register (){
+
+function register() {
     mainView.style.display = 'none';
     landingPage.style.display = 'none';
     registerYourself.style.display = "block";
@@ -132,68 +141,67 @@ function deleteItem(element) {
     panier.innerHTML = "+ " + panierCount
 }
 
-function validForm (){
-    if (surname.value == ""){
+function validForm() {
+    if (surname.value == "") {
         errorsurname.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre Nom</p>`
         surname.style.backgroundColor = `pink`
-    } else  {
+    } else {
         errorsurname.innerHTML = ""
         surname.style.backgroundColor = ""
     }
 
-    if (name.value == ""){
+    if (name.value == "") {
         errorname.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre Prénom</p>`
         name.style.backgroundColor = `pink`
-    } else if (name.value != ""){
+    } else if (name.value != "") {
         errorname.innerHTML = ""
         name.style.backgroundColor = ""
     }
 
-    if(emailAddress.value == ""){
+    if (emailAddress.value == "") {
         erroremailAddress.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre email</p>`
         emailAddress.style.backgroundColor = `pink`
-    } else if (emailAddress.value != ""){
+    } else if (emailAddress.value != "") {
         erroremailAddress.innerHTML = ""
         emailAddress.style.backgroundColor = ""
     }
 
-    if (checkbox.checked == false ){
+    if (checkbox.checked == false) {
         errorcheckbox.innerHTML = `<p class="text-danger">*Merci de bien vouloir valider les CGU</p>`
-    } else if (checkbox.checked == true){
+    } else if (checkbox.checked == true) {
         errorcheckbox.innerHTML = ""
     }
 
-    if(password.value == ""){
+    if (password.value == "") {
         errorpassword.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre mot de passe</p>`
         password.style.backgroundColor = `pink`
-    }     else if (password.value != "") {
+    } else if (password.value != "") {
         errorpassword.innerHTML = ""
         password.style.backgroundColor = ""
     }
 
-    if (confirmPassword.value == ""){
+    if (confirmPassword.value == "") {
         errorconfirmPassword.innerHTML = `<p class="text-danger">*Merci de bien vouloir confirmer votre mot de passe</p>`
         confirmPassword.style.backgroundColor = `pink`
     }
-    if (confirmPassword.value != password.value){
+    if (confirmPassword.value != password.value) {
         errorconfirmPassword.innerHTML = `<p class="text-danger">*Veuillez rentrer un MDP identique</p>`
         confirmPassword.style.backgroundColor = `pink`
-        
-    } 
-    else if (confirmPassword.value != "" && confirmPassword.value == password.value){
+
+    } else if (confirmPassword.value != "" && confirmPassword.value == password.value) {
         errorconfirmPassword.innerHTML = ""
         confirmPassword.style.backgroundColor = ""
     }
 
-    if (surname.value != "" && name.value != "" && password.value != "" && emailAddress.value != "" && confirmPassword.value == password.value && checkbox.checked == true ){
+    if (surname.value != "" && name.value != "" && password.value != "" && emailAddress.value != "" && confirmPassword.value == password.value && checkbox.checked == true) {
         mainView.style.display = 'none';
         landingPage.style.display = 'block';
         registerYourself.style.display = "none";
-    }  
-    
+    }
+
 }
 
-function cleanError(id){
+function cleanError(id) {
     let errormessage = document.getElementById("error" + id)
     errormessage.innerHTML = ""
     let background = document.getElementById(id)
