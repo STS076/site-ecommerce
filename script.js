@@ -1,6 +1,15 @@
 let fashion = document.getElementById('fashion')
 let panier = document.getElementById('panier')
 let vosArticles = document.getElementById('vosArticles')
+
+let password = document.getElementById("password")
+let name = document.getElementById("name")
+let surname = document.getElementById("surname")
+let emailAddress = document.getElementById("emailAddress")
+let checkbox = document.getElementById("checkbox")
+let submit = document.getElementById("submit")
+let confirmPassword = document.getElementById("confirmPassword")
+let page = document.getElementById("page")
 let myCartArray = []
 let allArticlesArray = []
 let panierCount = 0
@@ -96,19 +105,22 @@ function accessCart() {
                 console.log(nbId.value);
         })
     }
-    // 
 
-
-
-    // console.log(document.getElementById('nb1'))
+}
+function register (){
+    mainView.style.display = 'none';
+    landingPage.style.display = 'none';
+    registerYourself.style.display = "block";
 }
 
 
 function showClothes() {
     let mainView = document.getElementById('mainView');
     let landingPage = document.getElementById('landingPage')
+    let registerYourself = document.getElementById("registerYourself")
     mainView.style.display = 'block';
     landingPage.style.display = 'none';
+    registerYourself.style.display = "none";
 }
 
 
@@ -118,4 +130,72 @@ function deleteItem(element) {
     myCartArray.splice(card, 1)
     panierCount--
     panier.innerHTML = "+ " + panierCount
+}
+
+function validForm (){
+    if (surname.value == ""){
+        errorsurname.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre Nom</p>`
+        surname.style.backgroundColor = `pink`
+    } else  {
+        errorsurname.innerHTML = ""
+        surname.style.backgroundColor = ""
+    }
+
+    if (name.value == ""){
+        errorname.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre Prénom</p>`
+        name.style.backgroundColor = `pink`
+    } else if (name.value != ""){
+        errorname.innerHTML = ""
+        name.style.backgroundColor = ""
+    }
+
+    if(emailAddress.value == ""){
+        erroremailAddress.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre email</p>`
+        emailAddress.style.backgroundColor = `pink`
+    } else if (emailAddress.value != ""){
+        erroremailAddress.innerHTML = ""
+        emailAddress.style.backgroundColor = ""
+    }
+
+    if (checkbox.checked == false ){
+        errorcheckbox.innerHTML = `<p class="text-danger">*Merci de bien vouloir valider les CGU</p>`
+    } else if (checkbox.checked == true){
+        errorcheckbox.innerHTML = ""
+    }
+
+    if(password.value == ""){
+        errorpassword.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre mot de passe</p>`
+        password.style.backgroundColor = `pink`
+    }     else if (password.value != "") {
+        errorpassword.innerHTML = ""
+        password.style.backgroundColor = ""
+    }
+
+    if (confirmPassword.value == ""){
+        errorconfirmPassword.innerHTML = `<p class="text-danger">*Merci de bien vouloir confirmer votre mot de passe</p>`
+        confirmPassword.style.backgroundColor = `pink`
+    }
+    if (confirmPassword.value != password.value){
+        errorconfirmPassword.innerHTML = `<p class="text-danger">*Veuillez rentrer un MDP identique</p>`
+        confirmPassword.style.backgroundColor = `pink`
+        
+    } 
+    else if (confirmPassword.value != "" && confirmPassword.value == password.value){
+        errorconfirmPassword.innerHTML = ""
+        confirmPassword.style.backgroundColor = ""
+    }
+
+    if (surname.value != "" && name.value != "" && password.value != "" && emailAddress.value != "" && confirmPassword.value == password.value && checkbox.checked == true ){
+        mainView.style.display = 'none';
+        landingPage.style.display = 'block';
+        registerYourself.style.display = "none";
+    }  
+    
+}
+
+function cleanError(id){
+    let errormessage = document.getElementById("error" + id)
+    errormessage.innerHTML = ""
+    let background = document.getElementById(id)
+    background.style.backgroundColor = ""
 }

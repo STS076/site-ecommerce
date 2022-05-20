@@ -28,17 +28,17 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">LaManu's Clothing</a>
 
-                    <button class="btn btn-outline-dark" onclick="register()"><i
-                            class="bi bi-person-circle text-light fs-2"></i>
-                    </button>
-                    <button type="button" class="btn btn-secondary position-relative mx-5 mt-3 mb-2"
-                        data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="accessCart()">
-                        <i class="bi bi-cart3 text-light"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                            id="panier">0
-                            <span class="visually-hidden">Articles dans votre panier</span>
-                        </span>
-                    </button>
+                <button class="btn btn-outline-dark" onclick="register()"><i
+                        class="bi bi-person-circle text-light fs-2"></i>
+                </button>
+                <button type="button" class="btn btn-secondary position-relative mx-5 mt-3 mb-2" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" onclick="accessCart()">
+                    <i class="bi bi-cart3 text-light"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        id="panier">0
+                        <span class="visually-hidden">Articles dans votre panier</span>
+                    </span>
+                </button>
 
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -622,8 +622,54 @@
         </div>
     </div>
 
-    <div id="register">
-
+    <div id="registerYourself" class="mt-5 pt-2 displaynone">
+        <div class="container d-flex align-items-center flex-column  subway mt-1 mb-4 p-5" id="page">
+            <div>
+                <span class="fs-4 ms-4 pb-3">Veuillez rentrer les informations ci-dessous afin de vous inscrire :
+                </span>
+            </div>
+            <div class=" form-group col-lg-6 col-12 my-4 text-center">
+                <label>Nom:</label>
+                <input class="text-center form-control" placeholder="Nom" id="surname" onkeypress="cleanError(id)">
+                <p class="text-danger" id="errorsurname"></p>
+            </div>
+            <div class="form-group col-lg-6 col-12 my-4 text-center">
+                <label>Prénom:</label>
+                <input class="text-center form-control" placeholder="Prénom" id="name" onkeypress="cleanError(id)">
+                <p class="text-danger" id="errorname"></p>
+            </div>
+            <div class="form-group col-lg-6 col-12 my-4 text-center">
+                <label>Adresse email:</label>
+                <input class="text-center form-control" id="emailAddress" placeholder="Email"
+                    onkeypress="cleanError(id)">
+                <p class="text-danger" id="erroremailAddress"></p>
+            </div>
+            <div class="form-group col-lg-6 col-12 my-4 text-center">
+                <label>Mot de passe:</label>
+                <input type="password" class="text-center form-control" id="password" placeholder="Mot de passe"
+                    onkeypress="cleanError(id)">
+                <p class="text-danger" id="errorpassword"></p>
+            </div>
+            <div class="col-lg-6 col-12 my-3 form-group my-4 text-center">
+                <label>Confirmer votre mot de passe:</label>
+                <input type="password" class="text-center form-control" id="confirmPassword"
+                    placeholder="Confirmer votre mot de passe" onkeypress="cleanError(id)">
+                <p class="text-danger" id="errorconfirmPassword"></p>
+            </div>
+            <div class="row text-center">
+                <div class="col-lg-12 col-12 my-3">
+                    <p>J'ai lu et j'accèpte les conditions générales d'utilisation :</p>
+                    <input type="checkbox" id="checkbox" onclick="cleanError(id)">
+                    <p class="text-danger" id="errorcheckbox"></p>
+                </div>
+            </div>
+            <div class="my-3 text-center">
+                <button type="button" class="btn btn-dark" id="submit" onclick="validForm()">S'inscrire</button>
+            </div>
+            <div class="row text-center inscrit mt-3">
+                <p>Déjà inscrit?<span class="text-decoration-underline ms-1">Se connecter</span></p>
+            </div>
+        </div>
     </div>
 
     <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -644,6 +690,7 @@
             </div>
         </div>
     </div>
+
 
     <footer class="col-lg-12 col-12 bg-dark py-4 text-center">
         <div class="text-light pieds p-2">
