@@ -62,12 +62,7 @@ fetch('dress.json')
             `
             count++
         });
-<<<<<<< HEAD
-
-        
-=======
         console.log(allArticlesArray);
->>>>>>> 58bbbde49d393c94460a0d7703e985273889a1c3
     })
 
 function addToCart(element) {
@@ -116,6 +111,7 @@ function addToCart(element) {
                 </div>
             `;
         countCard++
+        
     });
 
     //  let resultSousTotal = sousTotalClacul()
@@ -123,10 +119,10 @@ function addToCart(element) {
 function sousTotalClacul(array) {
     console.log('sous toltal');
     // let resultSousTotal
-    // array.forEach(element => {
-    //     resultSousTotal =  element.quantity * element.price
-    //     return resultSousTotal
-    // });
+    array.forEach(element => {
+        element.priceByQuantity =  element.quantity * element.price
+        console.log(element.priceByQuantity);
+    });
 }
  function checkItem(array, item) {
         let sophie = false;
