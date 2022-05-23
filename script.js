@@ -71,10 +71,8 @@ function addToCart(element) {
     panier.innerHTML = "+ " + panierCount
 
 
-
     if (checkItem(myCartArray, 'article' + element) == true) {
-        // element.quantity++
-        // console.log('augmenter quantité');
+
 
     } else {
         myCartArray.push(allArticlesArray[element])
@@ -86,7 +84,6 @@ function addToCart(element) {
     console.log(myCartArray);
     vosArticles.innerHTML = '';
     myCartArray.forEach(element => {
-        // element.quantity++
         vosArticles.innerHTML += `
                 <div class="card mt-1" id="card${countCard}" >
                     <div class="row g-0">
@@ -116,7 +113,6 @@ function addToCart(element) {
 
     });
 
-    //  let resultSousTotal = sousTotalClacul()
 }
 function accessCart() {
     let totalDiv = document.getElementById('totalDiv')
@@ -124,10 +120,8 @@ function accessCart() {
     totalDiv.innerHTML = "Total : " + total + '€'
 }
 function sousTotalClacul(array) {
-    // let resultSousTotal
     array.forEach(element => {
         element.priceByQuantity = element.quantity * element.price
-        // console.log(element.priceByQuantity);
     });
 }
 
