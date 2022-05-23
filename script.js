@@ -12,6 +12,7 @@ let myCartArray = []
 let allArticlesArray = []
 let panierCount = 0
 let countCard = 0
+
 fetch('dress.json')
     .then(response => response.json())
     .then(data => {
@@ -52,14 +53,15 @@ fetch('dress.json')
         });
         console.log(allArticlesArray);
     })
+
 function addToCart(element) {
     panierCount++
     panier.innerHTML = "+ " + panierCount
     if (checkItem(myCartArray, 'article' + element) == true) {} else {
         myCartArray.push(allArticlesArray[element])
     }
-    console.log(sousTotalClacul(myCartArray));
-    console.log(myCartArray);
+    // console.log(sousTotalClacul(myCartArray));
+    // console.log(myCartArray);
     vosArticles.innerHTML = '';
     myCartArray.forEach(element => {
         vosArticles.innerHTML += `
@@ -91,6 +93,7 @@ function addToCart(element) {
     });
     total()
 }
+
 function total() {
     let sophie = 0
     let allSoustotal = document.querySelectorAll("[data-soustotal]")
@@ -101,11 +104,13 @@ function total() {
     totalDiv.innerHTML = "Total : " + sophie + '€'
     console.log(sophie);
 }
+
 function sousTotalClacul(array) {
     array.forEach(element => {
         element.priceByQuantity = element.quantity * element.price
     });
 }
+
 function checkItem(array, item) {
     let sophie = false;
     array.forEach(element => {
@@ -116,11 +121,13 @@ function checkItem(array, item) {
     });
     return sophie;
 }
+
 function register() {
     mainView.style.display = 'none';
     landingPage.style.display = 'none';
     registerYourself.style.display = "block";
 }
+
 function showClothes() {
     let mainView = document.getElementById('mainView');
     let landingPage = document.getElementById('landingPage')
@@ -129,6 +136,7 @@ function showClothes() {
     landingPage.style.display = 'none';
     registerYourself.style.display = "none";
 }
+
 function deleteItem(element) {
     let card = document.getElementById(element)
     card.remove()
@@ -136,6 +144,7 @@ function deleteItem(element) {
     panierCount--
     panier.innerHTML = "+ " + panierCount
 }
+
 function validForm() {
     if (surname.value == "") {
         errorsurname.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre Nom</p>`
@@ -188,21 +197,15 @@ function validForm() {
         registerYourself.style.display = "none";
     }
 }
+
 function cleanError(id) {
     let errormessage = document.getElementById("error" + id)
     errormessage.innerHTML = ""
     let background = document.getElementById(id)
     background.style.backgroundColor = ""
 }
+
 function trierArticles(filter) {
-    let robe = document.getElementById("robe")
-    let blouse = document.getElementById("blouse")
-    let tshirt = document.getElementById("tshirt")
-    let debardeur = document.getElementById("debardeur")
-    let bas = document.getElementById("bas")
-    let ensemble = document.getElementById("ensemble")
-    let combinaison = document.getElementById("combinaison")
-    fashion.innerHTML = ''
     allArticlesArray.forEach(element => {
         element.category.forEach(filterCategories => {
             if (filterCategories != "robe" && filter == "robe") {
@@ -224,6 +227,69 @@ function trierArticles(filter) {
         })
     });
 }
+
+function valider() {
+    let robe = document.getElementById("robe")
+    let blouse = document.getElementById("blouse")
+    let tshirt = document.getElementById("tshirt")
+    let debardeur = document.getElementById("debardeur")
+    let bas = document.getElementById("bas")
+    let ensemble = document.getElementById("ensemble")
+    let combinaison = document.getElementById("combinaison")
+
+    let choice = false
+    let showAll = true
+
+    if (robe.checked == true) {
+        choice = "robe"
+        showAll = false
+
+    }
+    if (blouse.checked == true) {
+        choice = "blouse"
+        showAll = false
+    }
+    if (tshirt.checked == true) {
+        choice = "tshirt"
+        showAll = false
+    }
+    if (debardeur.checked == true) {
+        choice = "debardeur"
+        showAll = false
+    }
+    if (bas.checked == true) {
+        choice = "bas"
+        showAll = false
+    }
+    if (ensemble.checked == true) {
+        choice = "ensemble"
+        showAll = false
+    }
+    if (combinaison.checked == true) {
+        choice = "combinaison"
+        showAll = false
+    }
+
+    fashion.innerHTML = ""
+    allArticlesArray.forEach(element => {
+        show = true
+
+        if (showAll == false) {
+            show = false
+            element.category.forEach(filterCategories => {
+                if (filterCategories == choice) {
+                    show = true
+                }
+            })
+        }
+
+        if (show) {
+            filterCards(element)
+        }
+    });
+
+}
+
 function filterCards(element) {
     let filterCount = 0
     fashion.innerHTML += `<div class="card my-2 col-lg-3 col-10 mx-2" >
@@ -256,5 +322,4 @@ function filterCards(element) {
     `
     filterCount++
     console.log(filterCount)
-
 };
