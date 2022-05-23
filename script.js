@@ -102,12 +102,9 @@ function total() {
     allSoustotal.forEach(element => {
         sophie+= parseFloat(element.innerHTML)
     });
-    console.log(sophie);
-}
-function accessCart() {
     let totalDiv = document.getElementById('totalDiv')
-
-    totalDiv.innerHTML = "Total : " + total + '€'
+    totalDiv.innerHTML = "Total : " + sophie + '€'
+    console.log(sophie);
 }
 function sousTotalClacul(array) {
     array.forEach(element => {
