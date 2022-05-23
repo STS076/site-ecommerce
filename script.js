@@ -5,7 +5,7 @@ let password = document.getElementById("password")
 let name = document.getElementById("name")
 let surname = document.getElementById("surname")
 let emailAddress = document.getElementById("emailAddress")
-let checkbox = document.getElementById("checkbox")
+// let checkbox = document.getElementById("checkbox")
 let submit = document.getElementById("submit")
 let confirmPassword = document.getElementById("confirmPassword")
 let page = document.getElementById("page")
@@ -245,32 +245,45 @@ function cleanError(id) {
     background.style.backgroundColor = ""
 }
 
-function trierArticles() {
-    let robes = document.getElementById("robes")
+function trierArticles(filter) {
+    let robe = document.getElementById("robe")
     let blouse = document.getElementById("blouse")
     let tshirt = document.getElementById("tshirt")
     let debardeur = document.getElementById("debardeur")
     let bas = document.getElementById("bas")
-    let ensembles = document.getElementById("ensembles")
-    let combinaisons = document.getElementById("combinaisons")
+    let ensemble = document.getElementById("ensemble")
+    let combinaison = document.getElementById("combinaison")
+
+    fashion.innerHTML = ''
 
     allArticlesArray.forEach(element => {
         element.category.forEach(filterCategories => {
-            if (filterCategories != "robe" && robes.checked == true ) {
+            if (filterCategories != "robe" && filter == "robe") {
+                return;
+            } 
+            else if (filterCategories != "blouse" && filter == "blouse") {
                 return;
             }
-            switch (element){
-                case "robe" : 
-                fashion.innerHTML = filterCards(element); 
-                break
+            else if (filterCategories != "tshirt" && filter == "tshirt") {
+                return;
             }
-            // console.log(element)
-            // fashion.innerHTML = filterCards(element)
-            console.log(filterCards(element))
+            else if (filterCategories != "debardeur" && filter == "debardeur") {
+                return;
+            }
+            else if (filterCategories != "bas" && filter == "bas") {
+                return;
+            }
+            else if (filterCategories != "ensemble" && filter == "ensemble") {
+                return;
+            }
+            else if (filterCategories != "combinaison" && filter == "combinaison") {
+                return;
+            }
+            filterCards(element);
         })
     });
-     
 }
+
 
 function filterCards(element) {
     let filterCount = 0
@@ -303,4 +316,5 @@ function filterCards(element) {
     </div>
     `
     filterCount++
+    console.log(filterCount)
 }
