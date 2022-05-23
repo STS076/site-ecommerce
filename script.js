@@ -5,7 +5,10 @@ let password = document.getElementById("password")
 let name = document.getElementById("name")
 let surname = document.getElementById("surname")
 let emailAddress = document.getElementById("emailAddress")
+<<<<<<< HEAD
 let checkbox = document.getElementById("checkbox")
+=======
+>>>>>>> d79ab0908ff756c284068622771e521c0a04a1b1
 let submit = document.getElementById("submit")
 let confirmPassword = document.getElementById("confirmPassword")
 let page = document.getElementById("page")
@@ -13,7 +16,6 @@ let myCartArray = []
 let allArticlesArray = []
 let panierCount = 0
 let countCard = 0
-
 fetch('dress.json')
     .then(response => response.json())
     .then(data => {
@@ -54,12 +56,15 @@ fetch('dress.json')
         });
         console.log(allArticlesArray);
     })
-
 function addToCart(element) {
     panierCount++
     panier.innerHTML = "+ " + panierCount
+<<<<<<< HEAD
     if (checkItem(myCartArray, 'article' + element) == true) {
     } else {
+=======
+    if (checkItem(myCartArray, 'article' + element) == true) {} else {
+>>>>>>> d79ab0908ff756c284068622771e521c0a04a1b1
         myCartArray.push(allArticlesArray[element])
     }
     console.log(sousTotalClacul(myCartArray));
@@ -93,21 +98,27 @@ function addToCart(element) {
             `;
         countCard++
     });
+<<<<<<< HEAD
     
+=======
+>>>>>>> d79ab0908ff756c284068622771e521c0a04a1b1
     total()
 }
 function total() {
     let sophie = 0
     let allSoustotal = document.querySelectorAll("[data-soustotal]")
     allSoustotal.forEach(element => {
-        sophie+= parseFloat(element.innerHTML)
+        sophie += parseFloat(element.innerHTML)
     });
+<<<<<<< HEAD
     console.log(sophie);
 }
 function accessCart() {
+=======
+>>>>>>> d79ab0908ff756c284068622771e521c0a04a1b1
     let totalDiv = document.getElementById('totalDiv')
-
-    totalDiv.innerHTML = "Total : " + total + '€'
+    totalDiv.innerHTML = "Total : " + sophie + '€'
+    console.log(sophie);
 }
 function sousTotalClacul(array) {
     array.forEach(element => {
@@ -124,7 +135,6 @@ function checkItem(array, item) {
     });
     return sophie;
 }
-
 function register() {
     mainView.style.display = 'none';
     landingPage.style.display = 'none';
@@ -160,7 +170,6 @@ function validForm() {
         errorname.innerHTML = ""
         name.style.backgroundColor = ""
     }
-
     if (emailAddress.value == "") {
         erroremailAddress.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre email</p>`
         emailAddress.style.backgroundColor = `pink`
@@ -204,7 +213,10 @@ function cleanError(id) {
     let background = document.getElementById(id)
     background.style.backgroundColor = ""
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d79ab0908ff756c284068622771e521c0a04a1b1
 function trierArticles(filter) {
     let robe = document.getElementById("robe")
     let blouse = document.getElementById("blouse")
@@ -213,38 +225,28 @@ function trierArticles(filter) {
     let bas = document.getElementById("bas")
     let ensemble = document.getElementById("ensemble")
     let combinaison = document.getElementById("combinaison")
-
     fashion.innerHTML = ''
-
     allArticlesArray.forEach(element => {
         element.category.forEach(filterCategories => {
             if (filterCategories != "robe" && filter == "robe") {
                 return;
-            } 
-            else if (filterCategories != "blouse" && filter == "blouse") {
+            } else if (filterCategories != "blouse" && filter == "blouse") {
                 return;
-            }
-            else if (filterCategories != "tshirt" && filter == "tshirt") {
+            } else if (filterCategories != "tshirt" && filter == "tshirt") {
                 return;
-            }
-            else if (filterCategories != "debardeur" && filter == "debardeur") {
+            } else if (filterCategories != "debardeur" && filter == "debardeur") {
                 return;
-            }
-            else if (filterCategories != "bas" && filter == "bas") {
+            } else if (filterCategories != "bas" && filter == "bas") {
                 return;
-            }
-            else if (filterCategories != "ensemble" && filter == "ensemble") {
+            } else if (filterCategories != "ensemble" && filter == "ensemble") {
                 return;
-            }
-            else if (filterCategories != "combinaison" && filter == "combinaison") {
+            } else if (filterCategories != "combinaison" && filter == "combinaison") {
                 return;
             }
             filterCards(element);
         })
     });
 }
-
-
 function filterCards(element) {
     let filterCount = 0
     fashion.innerHTML += `<div class="card my-2 col-lg-3 col-10 mx-2" >
@@ -277,4 +279,9 @@ function filterCards(element) {
     `
     filterCount++
     console.log(filterCount)
+<<<<<<< HEAD
 }
+=======
+
+};
+>>>>>>> d79ab0908ff756c284068622771e521c0a04a1b1
