@@ -13,7 +13,7 @@ let myCartArray = []
 let allArticlesArray = []
 let panierCount = 0
 let countCard = 0
-let total = 0
+
 fetch('dress.json')
     .then(response => response.json())
     .then(data => {
@@ -94,9 +94,9 @@ function addToCart(element) {
         countCard++
     });
     
-    toto()
+    total()
 }
-function toto() {
+function total() {
     let sophie = 0
     let allSoustotal = document.querySelectorAll("[data-soustotal]")
     allSoustotal.forEach(element => {
@@ -119,7 +119,6 @@ function checkItem(array, item) {
     array.forEach(element => {
         if (element.id == item) {
             element.quantity++
-            total += element.priceByQuantity
             sophie = true;
         }
     });
