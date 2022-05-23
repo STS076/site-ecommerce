@@ -32,7 +32,7 @@
                         class="bi bi-person-circle text-light fs-2"></i>
                 </button>
                 <button type="button" class="btn btn-secondary position-relative mx-5 mt-3 mb-2" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal" onclick="accessCart()">
+                    data-bs-target="#exampleModal">
                     <i class="bi bi-cart3 text-light"></i>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
                         id="panier">0
@@ -137,43 +137,43 @@
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         <div class="form-check checkbox">
-                                            <input class="form-check-input categories" type="checkbox" id="robesMobile" onclick="trierArticles()">
+                                            <input class="form-check-input categories" type="checkbox" id="robe" onclick="trierArticles('robe')">
                                             <label class="form-check-label">
                                                 Robes 
                                             </label>
                                         </div>
                                         <div class="form-check checkbox">
-                                            <input class="form-check-input" type="checkbox" id="=blousesMobile" onclick="trierArticles()">
+                                            <input class="form-check-input" type="checkbox" id="=blouse" onclick="trierArticles('blouse')">
                                             <label class="form-check-label">
                                                 Blouses
                                             </label>
                                         </div>
                                         <div class="form-check checkbox">
-                                            <input class="form-check-input" type="checkbox" id="tshirtMobile" onclick="trierArticles()">
+                                            <input class="form-check-input" type="checkbox" id="tshirt" onclick="trierArticles('tshirt')">
                                             <label class="form-check-label">
                                                 T-shirts
                                             </label>
                                         </div>
                                         <div class="form-check checkbox">
-                                            <input class="form-check-input" type="checkbox" id="debardeurMobile" onclick="trierArticles()">
-                                            <label class="form-check-label" ">
+                                            <input class="form-check-input" type="checkbox" id="debardeur" onclick="trierArticles('debardeur')">
+                                            <label class="form-check-label">
                                             Top & débardeurs
                                         </label>
                                     </div>
                                     <div class=" form-check checkbox">
-                                                <input class="form-check-input" type="checkbox" id="basMobile" onclick="trierArticles()">
+                                                <input class="form-check-input" type="checkbox" id="bas" onclick="trierArticles('bas')">
                                                 <label class="form-check-label">
                                                     Bas
                                                 </label>
                                         </div>
                                         <div class=" form-check checkbox">
-                                            <input class="form-check-input" type="checkbox" id="ensemblesMobile" onclick="trierArticles()">
+                                            <input class="form-check-input" type="checkbox" id="ensemble" onclick="trierArticles('ensemble')">
                                             <label class="form-check-label">
                                                 Ensembles
                                             </label>
                                         </div>
                                         <div class=" form-check checkbox">
-                                            <input class="form-check-input" type="checkbox" id="combinaisonsMobile" onclick="trierArticles()">
+                                            <input class="form-check-input" type="checkbox" id="combinaison" onclick="trierArticles('combinaison')">
                                             <label class="form-check-label">
                                                 Combinaisons & Bodys
                                             </label>
@@ -398,43 +398,43 @@
                     <div class="row mt-2 ms-4 ">
                         <p class="fw-bold ">Catégories</p>
                         <div class="form-check checkbox">
-                            <input class="form-check-input categories" type="checkbox" id="robes" onclick="trierArticles()">
+                            <input class="form-check-input categories" type="checkbox" id="robe" onchange="trierArticles('robe')">
                             <label class="form-check-label">
                                 Robes
                             </label>
                         </div>
                         <div class="form-check checkbox">
-                            <input class="form-check-input" type="checkbox" id="blouse" onclick="trierArticles()">
+                            <input class="form-check-input" type="checkbox" id="blouse" onchange="trierArticles('blouse')">
                             <label class="form-check-label">
                                 Blouses
                             </label>
                         </div>
                         <div class="form-check checkbox">
-                            <input class="form-check-input" type="checkbox" id="tshirt" onclick="trierArticles()">
+                            <input class="form-check-input" type="checkbox" id="tshirt" onchange="trierArticles('tshirt')">
                             <label class="form-check-label">
                                 T-shirts
                             </label>
                         </div>
                         <div class="form-check checkbox">
-                            <input class="form-check-input" type="checkbox" id="debardeur" onclick="trierArticles()">
+                            <input class="form-check-input" type="checkbox" id="debardeur" onchange="trierArticles('debardeur')">
                             <label class="form-check-label" ">
                         Top & débardeurs
                     </label>
                 </div>
                 <div class=" form-check checkbox">
-                                <input class="form-check-input" type="checkbox" id="bas" onclick="trierArticles()">
+                                <input class="form-check-input" type="checkbox" id="bas" onchange="trierArticles('bas')">
                                 <label class="form-check-label">
                                     Bas
                                 </label>
                         </div>
                         <div class=" form-check checkbox">
-                            <input class="form-check-input" type="checkbox" id="ensembles" onclick="trierArticles()">
+                            <input class="form-check-input" type="checkbox" id="ensemble" onchange="trierArticles('ensemble')">
                             <label class="form-check-label">
                                 Ensembles
                             </label>
                         </div>
                         <div class=" form-check checkbox">
-                            <input class="form-check-input" type="checkbox" id="combinaisons" onclick="trierArticles()">
+                            <input class="form-check-input" type="checkbox" id="combinaison" onchange="trierArticles('combinaison')">
                             <label class="form-check-label">
                                 Combinaisons & Bodys
                             </label>
