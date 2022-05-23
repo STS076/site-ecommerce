@@ -5,10 +5,6 @@ let password = document.getElementById("password")
 let name = document.getElementById("name")
 let surname = document.getElementById("surname")
 let emailAddress = document.getElementById("emailAddress")
-<<<<<<< HEAD
-let checkbox = document.getElementById("checkbox")
-=======
->>>>>>> d79ab0908ff756c284068622771e521c0a04a1b1
 let submit = document.getElementById("submit")
 let confirmPassword = document.getElementById("confirmPassword")
 let page = document.getElementById("page")
@@ -59,12 +55,7 @@ fetch('dress.json')
 function addToCart(element) {
     panierCount++
     panier.innerHTML = "+ " + panierCount
-<<<<<<< HEAD
-    if (checkItem(myCartArray, 'article' + element) == true) {
-    } else {
-=======
     if (checkItem(myCartArray, 'article' + element) == true) {} else {
->>>>>>> d79ab0908ff756c284068622771e521c0a04a1b1
         myCartArray.push(allArticlesArray[element])
     }
     console.log(sousTotalClacul(myCartArray));
@@ -98,10 +89,6 @@ function addToCart(element) {
             `;
         countCard++
     });
-<<<<<<< HEAD
-    
-=======
->>>>>>> d79ab0908ff756c284068622771e521c0a04a1b1
     total()
 }
 function total() {
@@ -110,12 +97,6 @@ function total() {
     allSoustotal.forEach(element => {
         sophie += parseFloat(element.innerHTML)
     });
-<<<<<<< HEAD
-    console.log(sophie);
-}
-function accessCart() {
-=======
->>>>>>> d79ab0908ff756c284068622771e521c0a04a1b1
     let totalDiv = document.getElementById('totalDiv')
     totalDiv.innerHTML = "Total : " + sophie + '€'
     console.log(sophie);
@@ -213,10 +194,6 @@ function cleanError(id) {
     let background = document.getElementById(id)
     background.style.backgroundColor = ""
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> d79ab0908ff756c284068622771e521c0a04a1b1
 function trierArticles(filter) {
     let robe = document.getElementById("robe")
     let blouse = document.getElementById("blouse")
@@ -279,9 +256,5 @@ function filterCards(element) {
     `
     filterCount++
     console.log(filterCount)
-<<<<<<< HEAD
-}
-=======
 
 };
->>>>>>> d79ab0908ff756c284068622771e521c0a04a1b1
