@@ -1,7 +1,6 @@
 let fashion = document.getElementById('fashion')
 let panier = document.getElementById('panier')
 let vosArticles = document.getElementById('vosArticles')
-
 let password = document.getElementById("password")
 let name = document.getElementById("name")
 let surname = document.getElementById("surname")
@@ -15,16 +14,6 @@ let allArticlesArray = []
 let panierCount = 0
 let countCard = 0
 let total = 0
-
-// panier.innerHTML = "+ " + localStorage.getItem("mycount")
-
-// localStorage.setItem("mycount", panierCount)
-// let nombres = localStorage.getItem("mycount")
-// nombres = nombres.split(",")
-// if (localStorage.getItem("mycount") != ""){
-//     panierCount = localStorage.getItem("mycount")
-// } 
-
 fetch('dress.json')
     .then(response => response.json())
     .then(data => {
@@ -69,18 +58,11 @@ fetch('dress.json')
 function addToCart(element) {
     panierCount++
     panier.innerHTML = "+ " + panierCount
-
-
     if (checkItem(myCartArray, 'article' + element) == true) {
-
-
     } else {
         myCartArray.push(allArticlesArray[element])
     }
-
     console.log(sousTotalClacul(myCartArray));
-    console.log(total);
-
     console.log(myCartArray);
     vosArticles.innerHTML = '';
     myCartArray.forEach(element => {
@@ -102,7 +84,7 @@ function addToCart(element) {
                                     <p class="mx-1 card-title">${element.id}</p>
                                     <p class="mx-1 card-text">${element.price}€</p>
                                     <input id="nb${element.id}" type="number" class="mx-1 p-0 taille" min="1" value="${element.quantity}">
-                                    <p class="mx-1 card-text" id="priceAll${element.id}">${element.priceByQuantity}€</p>
+                                    <p class="mx-1 card-text" data-soustotal id="priceAll${element.id}">${element.priceByQuantity}€</p>
                                 </div>
                             </div>
                         </div>
@@ -110,9 +92,17 @@ function addToCart(element) {
                 </div>
             `;
         countCard++
-
     });
-
+    
+    toto()
+}
+function toto() {
+    let sophie = 0
+    let allSoustotal = document.querySelectorAll("[data-soustotal]")
+    allSoustotal.forEach(element => {
+        sophie+= parseFloat(element.innerHTML)
+    });
+    console.log(sophie);
 }
 function accessCart() {
     let totalDiv = document.getElementById('totalDiv')
@@ -124,14 +114,12 @@ function sousTotalClacul(array) {
         element.priceByQuantity = element.quantity * element.price
     });
 }
-
 function checkItem(array, item) {
     let sophie = false;
     array.forEach(element => {
         if (element.id == item) {
             element.quantity++
             total += element.priceByQuantity
-
             sophie = true;
         }
     });
@@ -143,8 +131,6 @@ function register() {
     landingPage.style.display = 'none';
     registerYourself.style.display = "block";
 }
-
-
 function showClothes() {
     let mainView = document.getElementById('mainView');
     let landingPage = document.getElementById('landingPage')
@@ -153,8 +139,6 @@ function showClothes() {
     landingPage.style.display = 'none';
     registerYourself.style.display = "none";
 }
-
-
 function deleteItem(element) {
     let card = document.getElementById(element)
     card.remove()
@@ -162,7 +146,6 @@ function deleteItem(element) {
     panierCount--
     panier.innerHTML = "+ " + panierCount
 }
-
 function validForm() {
     if (surname.value == "") {
         errorsurname.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre Nom</p>`
@@ -171,7 +154,6 @@ function validForm() {
         errorsurname.innerHTML = ""
         surname.style.backgroundColor = ""
     }
-
     if (name.value == "") {
         errorname.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre Prénom</p>`
         name.style.backgroundColor = `pink`
@@ -187,13 +169,11 @@ function validForm() {
         erroremailAddress.innerHTML = ""
         emailAddress.style.backgroundColor = ""
     }
-
     if (checkbox.checked == false) {
         errorcheckbox.innerHTML = `<p class="text-danger">*Merci de bien vouloir valider les CGU</p>`
     } else if (checkbox.checked == true) {
         errorcheckbox.innerHTML = ""
     }
-
     if (password.value == "") {
         errorpassword.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre mot de passe</p>`
         password.style.backgroundColor = `pink`
@@ -201,7 +181,6 @@ function validForm() {
         errorpassword.innerHTML = ""
         password.style.backgroundColor = ""
     }
-
     if (confirmPassword.value == "") {
         errorconfirmPassword.innerHTML = `<p class="text-danger">*Merci de bien vouloir confirmer votre mot de passe</p>`
         confirmPassword.style.backgroundColor = `pink`
@@ -214,23 +193,18 @@ function validForm() {
         errorconfirmPassword.innerHTML = ""
         confirmPassword.style.backgroundColor = ""
     }
-
     if (surname.value != "" && name.value != "" && password.value != "" && emailAddress.value != "" && confirmPassword.value == password.value && checkbox.checked == true) {
         mainView.style.display = 'none';
         landingPage.style.display = 'block';
         registerYourself.style.display = "none";
     }
-
 }
-
 function cleanError(id) {
     let errormessage = document.getElementById("error" + id)
     errormessage.innerHTML = ""
     let background = document.getElementById(id)
     background.style.backgroundColor = ""
 }
-
-
 function trierArticles() {
     let robes = document.getElementById("robes")
     let blouse = document.getElementById("blouse")
