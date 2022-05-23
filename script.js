@@ -5,7 +5,7 @@ let password = document.getElementById("password")
 let name = document.getElementById("name")
 let surname = document.getElementById("surname")
 let emailAddress = document.getElementById("emailAddress")
-// let checkbox = document.getElementById("checkbox")
+let checkbox = document.getElementById("checkbox")
 let submit = document.getElementById("submit")
 let confirmPassword = document.getElementById("confirmPassword")
 let page = document.getElementById("page")
@@ -58,10 +58,6 @@ fetch('dress.json')
 function addToCart(element) {
     panierCount++
     panier.innerHTML = "+ " + panierCount
-<<<<<<< HEAD
-
-=======
->>>>>>> 739710cbb9d9bb30fea45d0ff27355c5945e2900
     if (checkItem(myCartArray, 'article' + element) == true) {
     } else {
         myCartArray.push(allArticlesArray[element])
@@ -97,40 +93,6 @@ function addToCart(element) {
             `;
         countCard++
     });
-<<<<<<< HEAD
-
-
-
-    // if (element.quantity == 0) {
-
-    // } else {
-    //     element.quantity++
-    //     // let nbId = document.getElementById('nb' + element.id)
-    //     // console.log(nbId);
-    //     // nbId.value = element.quantity++
-
-    // }
-
-    //     // element[quantity]++;
-    //     // element[priceByQuantity] = element.quantity * element.price
-
-    //    
-
-
-}
-
-function checkItem(array, item) {
-    let sophie = false;
-    array.forEach(element => {
-        if (element.id == item) {
-            element.quantity++
-            sophie = true;
-        }
-    });
-    return sophie;
-}
-
-=======
     
     total()
 }
@@ -142,7 +104,6 @@ function total() {
     });
     console.log(sophie);
 }
->>>>>>> 739710cbb9d9bb30fea45d0ff27355c5945e2900
 function accessCart() {
     let totalDiv = document.getElementById('totalDiv')
 
@@ -169,10 +130,6 @@ function register() {
     landingPage.style.display = 'none';
     registerYourself.style.display = "block";
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 739710cbb9d9bb30fea45d0ff27355c5945e2900
 function showClothes() {
     let mainView = document.getElementById('mainView');
     let landingPage = document.getElementById('landingPage')
@@ -181,10 +138,6 @@ function showClothes() {
     landingPage.style.display = 'none';
     registerYourself.style.display = "none";
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 739710cbb9d9bb30fea45d0ff27355c5945e2900
 function deleteItem(element) {
     let card = document.getElementById(element)
     card.remove()
@@ -251,14 +204,9 @@ function cleanError(id) {
     let background = document.getElementById(id)
     background.style.backgroundColor = ""
 }
-<<<<<<< HEAD
 
 function trierArticles(filter) {
     let robe = document.getElementById("robe")
-=======
-function trierArticles() {
-    let robes = document.getElementById("robes")
->>>>>>> 739710cbb9d9bb30fea45d0ff27355c5945e2900
     let blouse = document.getElementById("blouse")
     let tshirt = document.getElementById("tshirt")
     let debardeur = document.getElementById("debardeur")
@@ -269,7 +217,6 @@ function trierArticles() {
     fashion.innerHTML = ''
 
     allArticlesArray.forEach(element => {
-<<<<<<< HEAD
         element.category.forEach(filterCategories => {
             if (filterCategories != "robe" && filter == "robe") {
                 return;
@@ -330,15 +277,4 @@ function filterCards(element) {
     `
     filterCount++
     console.log(filterCount)
-=======
-        if (robes.checked == true) {
-            fashion.innerHTML += element.category.indexOf("robe")
-            console.log(robes)
-        } else {
-            mainView.style.display = 'block';
-        }
-    });
-
-
->>>>>>> 739710cbb9d9bb30fea45d0ff27355c5945e2900
 }
