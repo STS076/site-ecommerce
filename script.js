@@ -14,6 +14,7 @@ let myCartArray = []
 let allArticlesArray = []
 let panierCount = 0
 let countCard = 0
+let total = 0
 
 // panier.innerHTML = "+ " + localStorage.getItem("mycount")
 
@@ -68,8 +69,7 @@ fetch('dress.json')
 function addToCart(element) {
     panierCount++
     panier.innerHTML = "+ " + panierCount
-    let total
-   
+
 
 
     if (checkItem(myCartArray, 'article' + element) == true) {
@@ -79,8 +79,9 @@ function addToCart(element) {
     } else {
         myCartArray.push(allArticlesArray[element])
     }
-    
+
     console.log(sousTotalClacul(myCartArray));
+    console.log(total);
 
     console.log(myCartArray);
     vosArticles.innerHTML = '';
@@ -112,30 +113,36 @@ function addToCart(element) {
                 </div>
             `;
         countCard++
-        total = element.priceByQuantity
-        console.log(total);
-        
+
     });
 
     //  let resultSousTotal = sousTotalClacul()
 }
+function accessCart() {
+    let totalDiv = document.getElementById('totalDiv')
+
+    totalDiv.innerHTML = "Total : " + total + '€'
+}
 function sousTotalClacul(array) {
     // let resultSousTotal
     array.forEach(element => {
-        element.priceByQuantity =  element.quantity * element.price
+        element.priceByQuantity = element.quantity * element.price
         // console.log(element.priceByQuantity);
     });
 }
- function checkItem(array, item) {
-        let sophie = false;
-        array.forEach(element => {
-            if (element.id == item) {
-                element.quantity++
-                sophie = true;
-            }
-        });
-        return sophie;
-    }
+
+function checkItem(array, item) {
+    let sophie = false;
+    array.forEach(element => {
+        if (element.id == item) {
+            element.quantity++
+            total += element.priceByQuantity
+
+            sophie = true;
+        }
+    });
+    return sophie;
+}
 
 function register() {
     mainView.style.display = 'none';
@@ -230,7 +237,7 @@ function cleanError(id) {
 }
 
 
-function trierArticles(){
+function trierArticles() {
     let robes = document.getElementById("robes")
     let blouse = document.getElementById("blouse")
     let tshirt = document.getElementById("tshirt")
@@ -240,7 +247,7 @@ function trierArticles(){
     let combinaisons = document.getElementById("combinaisons")
 
     allArticlesArray.forEach(element => {
-        if (robes.checked == true){
+        if (robes.checked == true) {
             fashion.innerHTML += element.category.indexOf("robe")
             console.log(robes)
         } else {
@@ -248,6 +255,5 @@ function trierArticles(){
         }
     });
 
- 
-}
 
+}

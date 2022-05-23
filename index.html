@@ -32,7 +32,7 @@
                         class="bi bi-person-circle text-light fs-2"></i>
                 </button>
                 <button type="button" class="btn btn-secondary position-relative mx-5 mt-3 mb-2" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
+                    data-bs-target="#exampleModal" onclick="accessCart()">
                     <i class="bi bi-cart3 text-light"></i>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
                         id="panier">0
@@ -683,6 +683,7 @@
 
                 </div>
                 <div class="modal-footer">
+                    <span class="badge btn-outline-light text-dark" id="totalDiv">Total : 0 €</span>
                     <button type="button" class="btn filtres" id="addToCart">Passer au
                         règlement</button>
                     <button type="button" class="btn filtres" data-bs-dismiss="modal">Fermer</button>
