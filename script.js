@@ -68,12 +68,13 @@ fetch('dress.json')
 function addToCart(element) {
     panierCount++
     panier.innerHTML = "+ " + panierCount
+    let total
    
 
 
     if (checkItem(myCartArray, 'article' + element) == true) {
         // element.quantity++
-        console.log('augmenter quantité');
+        // console.log('augmenter quantité');
 
     } else {
         myCartArray.push(allArticlesArray[element])
@@ -111,17 +112,18 @@ function addToCart(element) {
                 </div>
             `;
         countCard++
+        total = element.priceByQuantity
+        console.log(total);
         
     });
 
     //  let resultSousTotal = sousTotalClacul()
 }
 function sousTotalClacul(array) {
-    console.log('sous toltal');
     // let resultSousTotal
     array.forEach(element => {
         element.priceByQuantity =  element.quantity * element.price
-        console.log(element.priceByQuantity);
+        // console.log(element.priceByQuantity);
     });
 }
  function checkItem(array, item) {
