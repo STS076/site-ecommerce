@@ -14,15 +14,6 @@ let allArticlesArray = []
 let panierCount = 0
 let countCard = 0
 
-// panier.innerHTML = "+ " + localStorage.getItem("mycount")
-
-// localStorage.setItem("mycount", panierCount)
-// let nombres = localStorage.getItem("mycount")
-// nombres = nombres.split(",")
-// if (localStorage.getItem("mycount") != ""){
-//     panierCount = localStorage.getItem("mycount")
-// } 
-
 fetch('dress.json')
     .then(response => response.json())
     .then(data => {
@@ -67,21 +58,18 @@ fetch('dress.json')
 function addToCart(element) {
     panierCount++
     panier.innerHTML = "+ " + panierCount
+<<<<<<< HEAD
 
+=======
+>>>>>>> 739710cbb9d9bb30fea45d0ff27355c5945e2900
     if (checkItem(myCartArray, 'article' + element) == true) {
-        // element.quantity++
-        console.log('augmenter quantité');
-
     } else {
         myCartArray.push(allArticlesArray[element])
     }
-
+    console.log(sousTotalClacul(myCartArray));
     console.log(myCartArray);
-
     vosArticles.innerHTML = '';
-
     myCartArray.forEach(element => {
-        // element.quantity++
         vosArticles.innerHTML += `
                 <div class="card mt-1" id="card${countCard}" >
                     <div class="row g-0">
@@ -100,7 +88,7 @@ function addToCart(element) {
                                     <p class="mx-1 card-title">${element.id}</p>
                                     <p class="mx-1 card-text">${element.price}€</p>
                                     <input id="nb${element.id}" type="number" class="mx-1 p-0 taille" min="1" value="${element.quantity}">
-                                    <p class="mx-1 card-text" id="priceAll${element.id}">${element.priceByQuantity}€</p>
+                                    <p class="mx-1 card-text" data-soustotal id="priceAll${element.id}">${element.priceByQuantity}€</p>
                                 </div>
                             </div>
                         </div>
@@ -109,6 +97,7 @@ function addToCart(element) {
             `;
         countCard++
     });
+<<<<<<< HEAD
 
 
 
@@ -141,18 +130,38 @@ function checkItem(array, item) {
     return sophie;
 }
 
+=======
+    
+    total()
+}
+function total() {
+    let sophie = 0
+    let allSoustotal = document.querySelectorAll("[data-soustotal]")
+    allSoustotal.forEach(element => {
+        sophie+= parseFloat(element.innerHTML)
+    });
+    console.log(sophie);
+}
+>>>>>>> 739710cbb9d9bb30fea45d0ff27355c5945e2900
 function accessCart() {
-    myCartArray
-    // let nbId = document.getElementById('nb')
+    let totalDiv = document.getElementById('totalDiv')
 
-
-    // for (let i = 0; i < vosArticles.length; i++) {
-    //     // console.log(nbId);
-    //     nbId.addEventListener('click', function priceArticle() {
-    //         console.log(nbId.value);
-    //     })
-    // }
-
+    totalDiv.innerHTML = "Total : " + total + '€'
+}
+function sousTotalClacul(array) {
+    array.forEach(element => {
+        element.priceByQuantity = element.quantity * element.price
+    });
+}
+function checkItem(array, item) {
+    let sophie = false;
+    array.forEach(element => {
+        if (element.id == item) {
+            element.quantity++
+            sophie = true;
+        }
+    });
+    return sophie;
 }
 
 function register() {
@@ -160,7 +169,10 @@ function register() {
     landingPage.style.display = 'none';
     registerYourself.style.display = "block";
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 739710cbb9d9bb30fea45d0ff27355c5945e2900
 function showClothes() {
     let mainView = document.getElementById('mainView');
     let landingPage = document.getElementById('landingPage')
@@ -169,7 +181,10 @@ function showClothes() {
     landingPage.style.display = 'none';
     registerYourself.style.display = "none";
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 739710cbb9d9bb30fea45d0ff27355c5945e2900
 function deleteItem(element) {
     let card = document.getElementById(element)
     card.remove()
@@ -177,7 +192,6 @@ function deleteItem(element) {
     panierCount--
     panier.innerHTML = "+ " + panierCount
 }
-
 function validForm() {
     if (surname.value == "") {
         errorsurname.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre Nom</p>`
@@ -186,7 +200,6 @@ function validForm() {
         errorsurname.innerHTML = ""
         surname.style.backgroundColor = ""
     }
-
     if (name.value == "") {
         errorname.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre Prénom</p>`
         name.style.backgroundColor = `pink`
@@ -202,13 +215,11 @@ function validForm() {
         erroremailAddress.innerHTML = ""
         emailAddress.style.backgroundColor = ""
     }
-
     if (checkbox.checked == false) {
         errorcheckbox.innerHTML = `<p class="text-danger">*Merci de bien vouloir valider les CGU</p>`
     } else if (checkbox.checked == true) {
         errorcheckbox.innerHTML = ""
     }
-
     if (password.value == "") {
         errorpassword.innerHTML = `<p class="text-danger">*Merci de bien vouloir renseigner votre mot de passe</p>`
         password.style.backgroundColor = `pink`
@@ -216,7 +227,6 @@ function validForm() {
         errorpassword.innerHTML = ""
         password.style.backgroundColor = ""
     }
-
     if (confirmPassword.value == "") {
         errorconfirmPassword.innerHTML = `<p class="text-danger">*Merci de bien vouloir confirmer votre mot de passe</p>`
         confirmPassword.style.backgroundColor = `pink`
@@ -229,24 +239,26 @@ function validForm() {
         errorconfirmPassword.innerHTML = ""
         confirmPassword.style.backgroundColor = ""
     }
-
     if (surname.value != "" && name.value != "" && password.value != "" && emailAddress.value != "" && confirmPassword.value == password.value && checkbox.checked == true) {
         mainView.style.display = 'none';
         landingPage.style.display = 'block';
         registerYourself.style.display = "none";
     }
-
 }
-
 function cleanError(id) {
     let errormessage = document.getElementById("error" + id)
     errormessage.innerHTML = ""
     let background = document.getElementById(id)
     background.style.backgroundColor = ""
 }
+<<<<<<< HEAD
 
 function trierArticles(filter) {
     let robe = document.getElementById("robe")
+=======
+function trierArticles() {
+    let robes = document.getElementById("robes")
+>>>>>>> 739710cbb9d9bb30fea45d0ff27355c5945e2900
     let blouse = document.getElementById("blouse")
     let tshirt = document.getElementById("tshirt")
     let debardeur = document.getElementById("debardeur")
@@ -257,6 +269,7 @@ function trierArticles(filter) {
     fashion.innerHTML = ''
 
     allArticlesArray.forEach(element => {
+<<<<<<< HEAD
         element.category.forEach(filterCategories => {
             if (filterCategories != "robe" && filter == "robe") {
                 return;
@@ -317,4 +330,15 @@ function filterCards(element) {
     `
     filterCount++
     console.log(filterCount)
+=======
+        if (robes.checked == true) {
+            fashion.innerHTML += element.category.indexOf("robe")
+            console.log(robes)
+        } else {
+            mainView.style.display = 'block';
+        }
+    });
+
+
+>>>>>>> 739710cbb9d9bb30fea45d0ff27355c5945e2900
 }
