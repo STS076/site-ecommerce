@@ -18,33 +18,40 @@ fetch('dress.json')
     .then(data => {
         let count = 0
         let dress = data.results
+        
         dress.forEach(element => {
+            const images = element.imgs.map((__, key) => `<button type="button" data-bs-target="#carousel-${element.id}" data-bs-slide-to="${key}" ${key == 0 ? 'class="active" aria-current="true"' : null} aria-label="Slide ${key + 1}"></button>`)
             allArticlesArray.push(element)
             fashion.innerHTML += `
-                <div class="card my-2 col-lg-3 col-10 mx-2" >
-                    <div id="carousel-${element.id}" class="carousel carousel-dark slide" data-bs-ride="carousel" >
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="10000">
-                            <img style="width:100%" src="img/${element.imgs[0]}" alt="vue vêtement de face">
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 " >
+                    <div class="card m-2" >
+                        <div id="carousel-${element.id}" class="carousel carousel-dark slide" data-bs-ride="carousel" >
+                            <div class="carousel-indicators">
+                                ${images}
                             </div>
-                            <div class="carousel-item" data-bs-interval="2000">
-                            <img style="width:100%" src="img/${element.imgs[1]}" alt="vue vêtement de dos">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-bs-interval="10000">
+                                <img style="width:100%" src="img/${element.imgs[0]}" alt="vue vêtement de face" loading="lazy">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="2000">
+                                <img style="width:100%" src="img/${element.imgs[1]}" alt="vue vêtement de dos" loading="lazy">
+                                </div>
                             </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-${element.id}" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel-${element.id}" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-${element.id}" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel-${element.id}" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <p class="txtSize">${element.name}</p>
-                        <div class="d-flex  justify-content-between align-items-center ">
-                            <div class="fw-bold">${element.price}€</div>
-                            <button id="${element.id}-btn" class="btn p-2 smoll-text" onclick="addToCart(${count})">Ajouter au panier</button>
+                        <div class="card-body">
+                            <p class="txtSize">${element.name}</p>
+                            <div class="d-flex  justify-content-between align-items-center ">
+                                <div class="fw-bold">${element.price}€</div>
+                                <button id="${element.id}-btn" class="btn p-2 smoll-text" onclick="addToCart(${count})">Ajouter au panier</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -292,30 +299,33 @@ function valider() {
 
 function filterCards(element) {
     let filterCount = 0
-    fashion.innerHTML += `<div class="card my-2 col-lg-3 col-10 mx-2" >
-        <div id="carousel-${element.id}" class="carousel carousel-dark slide" data-bs-ride="carousel" >
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="10000">
-                <img style="width:100%" src="img/${element.imgs[0]}" alt="vue vêtement de face">
+    fashion.innerHTML += 
+    `<div class="col-12 col-sm-6 col-lg-4 col-xl-3 " >
+        <div class="card m-2">
+            <div id="carousel-${element.id}" class="carousel carousel-dark slide" data-bs-ride="carousel" >
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                    <img style="width:100%" src="img/${element.imgs[0]}" alt="vue vêtement de face" loading="lazy">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                    <img style="width:100%" src="img/${element.imgs[1]}" alt="vue vêtement de dos" loading="lazy">
+                    </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                <img style="width:100%" src="img/${element.imgs[1]}" alt="vue vêtement de dos">
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-${element.id}" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-${element.id}" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-${element.id}" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carousel-${element.id}" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-        <div class="card-body">
-            <p class="txtSize">${element.name}</p>
-            <div class="d-flex  justify-content-between align-items-center ">
-                <div class="fw-bold">${element.price}€</div>
-                <button id="${element.id}-btn" class="btn p-2 smoll-text" onclick="addToCart(${filterCount})">Ajouter au panier</button>
+            <div class="card-body">
+                <p class="txtSize">${element.name}</p>
+                <div class="d-flex  justify-content-between align-items-center ">
+                    <div class="fw-bold">${element.price}€</div>
+                    <button id="${element.id}-btn" class="btn p-2 smoll-text" onclick="addToCart(${filterCount})">Ajouter au panier</button>
+                </div>
             </div>
         </div>
     </div>
