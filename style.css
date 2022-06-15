@@ -62,13 +62,28 @@ footer{
     display: none;
 }
 
-@media screen and (min-width:600px) {
+/* @media screen and (min-width:600px) {
     .card{
         max-height: 37rem;
     }
     
-}
+} */
 
 .valid {
     width: 80%;
+}
+
+
+.carousel-dark .carousel-indicators [data-bs-target] {
+    background-color: #0000006e;
+}
+
+.carousel-indicators {
+    margin-bottom: 0;
+    left: unset;
+    margin-right: 5%;
+}
+
+.card {
+    overflow: hidden;
 }

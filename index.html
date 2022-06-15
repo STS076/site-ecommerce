@@ -23,30 +23,10 @@
 
 <body>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0 pb-2">
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">LaManu's Clothing</a>
-
-                <button class="btn btn-outline-dark" onclick="register()"><i
-                        class="bi bi-person-circle text-light fs-2"></i>
-                </button>
-                <button type="button" class="btn btn-secondary position-relative mx-5 mt-3 mb-2" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">
-                    <i class="bi bi-cart3 text-light"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                        id="panier">0
-                        <span class="visually-hidden">Articles dans votre panier</span>
-                    </span>
-                </button>
-
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
+                <a class="navbar-brand me-5" href="#">LaManu's Clothing</a>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -98,20 +78,36 @@
 
 
 
-                    <form class="d-flex" role="search">
-                        <input class="form-control " type="search" placeholder="Rechercher un article"
-                            aria-label="Search">
-                        <button class="btn btn-outline btn-outline-secondary" type="submit"><i
-                                class="bi bi-search text-light "></i></button>
+                    <form class="d-flex me-4" role="search">
+                        <div class="input-group">
+                            <input class="form-control " type="search" placeholder="Rechercher un article" aria-label="Search">
+                            <button class="btn btn-outline btn-outline-secondary" type="submit"><i class="bi bi-search text-light "></i></button>
+                        </div>
                     </form>
                 </div>
+                <button class="btn btn-outline-dark" onclick="register()"><i
+                    class="bi bi-person-circle text-light fs-2"></i>
+                </button>
+                <button type="button" class="btn btn-secondary position-relative mx-2  " data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    <i class="bi bi-cart3 text-light"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        id="panier">0
+                        <span class="visually-hidden">Articles dans votre panier</span>
+                    </span>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <div class="mt-5 pt-2 displaynone" id="mainView">
-        <div class="row m-0">
-            <div class="d-lg-none mt-5">
+    <div id="mainView" class="d-none">
+        <div class="container-fluid d-flex flex-column flex-lg-row p-0 m-0">
+            <div class="d-lg-none">
 
                 <button class="btn mx-5 mt-3 btn-outline-light text-dark" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Filtres<i
@@ -394,8 +390,8 @@
 
             </div>
 
-            <div class="col-lg-2 d-lg-block d-none filtres">
-                <div class="row sticky-top left mt-4">
+            <aside class="col-2 d-lg-block d-none filtres">
+                <div class="left mt-4">
                     <div class="row mt-2 ms-4 ">
                         <p class="fw-bold ">Catégories</p>
                         <div class="form-check checkbox">
@@ -418,7 +414,7 @@
                         </div>
                         <div class="form-check checkbox">
                             <input class="form-check-input" type="checkbox" id="debardeur" name="acceptDebardeur" >
-                            <label class="form-check-label" ">
+                            <label class="form-check-label">
                         Top & débardeurs
                     </label>
                 </div>
@@ -605,14 +601,16 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-10 col-12 mt-2 d-flex flex-wrap justify-content-evenly right" id="fashion">
+            </aside>
+            <div class="container-fluid">
+                <div class="row mt-2 g-1 right" id="fashion">
+                </div>
             </div>
         </div>
     </div>
 
     <div id="landingPage">
-        <div class="row m-0 promo mt-5 mb-3 py-5 text-center">
+        <div class="row m-0 promo mb-3 py-5 text-center">
             <p class="mt-5 fw-bolder gras fst-italic">- 25% sur des milliers de références</p>
             <p class="code mb-0">Code : SUMMERGLAM22</p>
             <p class="code">*date limite 15/06/2022</p>
