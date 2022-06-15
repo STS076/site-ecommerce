@@ -84,3 +84,6 @@ footer{
     margin-right: 5%;
 }
 
+.card {
+    overflow: hidden;
+}

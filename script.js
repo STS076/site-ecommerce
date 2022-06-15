@@ -13,13 +13,13 @@ let allArticlesArray = []
 let panierCount = 0
 let countCard = 0
 
+
 fetch('dress.json')
     .then(response => response.json())
     .then(data => {
-        let count = 0
         let dress = data.results
         
-        dress.forEach(element => {
+        dress.forEach((element, key) => {
             const images = element.imgs.map((__, key) => `<button type="button" data-bs-target="#carousel-${element.id}" data-bs-slide-to="${key}" ${key == 0 ? 'class="active" aria-current="true"' : null} aria-label="Slide ${key + 1}"></button>`)
             allArticlesArray.push(element)
             fashion.innerHTML += `
@@ -50,54 +50,57 @@ fetch('dress.json')
                             <p class="txtSize">${element.name}</p>
                             <div class="d-flex  justify-content-between align-items-center ">
                                 <div class="fw-bold">${element.price}€</div>
-                                <button id="${element.id}-btn" class="btn p-2 smoll-text" onclick="addToCart(${count})">Ajouter au panier</button>
+                                <button id="${element.id}-btn" class="btn p-2 smoll-text" onclick="addToCart(${key})">Ajouter au panier</button>
                             </div>
                         </div>
                     </div>
                 </div>
             `
-            count++
         });
         console.log(allArticlesArray);
     })
 
 function addToCart(element) {
-    panierCount++
-    panier.innerHTML = "+ " + panierCount
-    if (checkItem(myCartArray, 'article' + element) == true) {} else {
-        myCartArray.push(allArticlesArray[element])
+    let item = {
+        "item": allArticlesArray[element],
+        "quantity": 1
     }
-    // console.log(sousTotalClacul(myCartArray));
-    // console.log(myCartArray);
+    if (myCartArray[element]) {
+        myCartArray[element].quantity++
+    } else {
+        myCartArray.push(item)
+    }
+    console.log(myCartArray);
+
     vosArticles.innerHTML = '';
-    myCartArray.forEach(element => {
+    myCartArray.forEach((element, key) => {
         vosArticles.innerHTML += `
-                <div class="card mt-1" id="card${countCard}" >
+                <div class="card mt-2" id="card${key}" >
                     <div class="row g-0">
                         <div class="col-lg-2 col-2">
-                            <img  style="width:100%" src="img/${element.imgs[0]}" alt="vêtement dans votre panier">
+                            <img  style="width:100%" src="img/${element.item.imgs[0]}" alt="vêtement dans votre panier">
                         </div>
                         <div class="col-lg-10 col-10">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between mb-2">
-                                    <p class="card-title fw-bold">${element.name}</p>
-                                    <a type="button" class="mx-1 aH my-0 p-0 text-dark fw-bold btn-sm d-flex align-items-end " onclick="deleteItem('card${countCard}')">
+                                    <p class="card-title fw-bold">${element.item.name}</p>
+                                    <a type="button" class="mx-1 aH my-0 p-0 text-dark fw-bold btn-sm d-flex align-items-end " onclick="deleteItem('card${key}')">
                                         <i class="bi bi-trash3"></i>
                                     </a>
                                 </div>
                                 <div class="d-flex justify-content-evenly">
-                                    <p class="mx-1 card-title">${element.id}</p>
-                                    <p class="mx-1 card-text">${element.price}€</p>
-                                    <input id="nb${element.id}" type="number" class="mx-1 p-0 taille" min="1" value="${element.quantity}">
-                                    <p class="mx-1 card-text" data-soustotal id="priceAll${element.id}">${element.priceByQuantity}€</p>
+                                    <p class="mx-1 card-title">${element.item.id}</p>
+                                    <p class="mx-1 card-text">${element.item.price}€</p>
+                                    <input id="nb${element.item.id}" type="number" class="mx-1 p-1 taille" min="1" value="${element.quantity}" data-cart-itemquantity="${key}">
+                                    <p class="mx-1 card-text" data-soustotal id="priceAll${element.item.id}">${element.item.price * element.quantity}€</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             `;
-        countCard++
     });
+    panier.innerHTML = myCartArray.length
     total()
 }
 
@@ -110,6 +113,7 @@ function total() {
     let totalDiv = document.getElementById('totalDiv')
     totalDiv.innerHTML = "Total : " + sophie + '€'
     console.log(sophie);
+    listenCartQuantity()
 }
 
 function sousTotalClacul(array) {
@@ -130,7 +134,7 @@ function checkItem(array, item) {
 }
 
 function register() {
-    mainView.style.display = 'none';
+    mainView.classList.add('d-none');
     landingPage.style.display = 'none';
     registerYourself.style.display = "block";
 }
@@ -139,7 +143,7 @@ function showClothes() {
     let mainView = document.getElementById('mainView');
     let landingPage = document.getElementById('landingPage')
     let registerYourself = document.getElementById("registerYourself")
-    mainView.style.display = 'block';
+    mainView.classList.remove('d-none');
     landingPage.style.display = 'none';
     registerYourself.style.display = "none";
 }
@@ -148,8 +152,8 @@ function deleteItem(element) {
     let card = document.getElementById(element)
     card.remove()
     myCartArray.splice(card, 1)
-    panierCount--
-    panier.innerHTML = "+ " + panierCount
+    panier.innerHTML = myCartArray.length
+    total()
 }
 
 function validForm() {
@@ -199,7 +203,7 @@ function validForm() {
         confirmPassword.style.backgroundColor = ""
     }
     if (surname.value != "" && name.value != "" && password.value != "" && emailAddress.value != "" && confirmPassword.value == password.value && checkbox.checked == true) {
-        mainView.style.display = 'none';
+        mainView.classList.add('d-none');
         landingPage.style.display = 'block';
         registerYourself.style.display = "none";
     }
@@ -244,61 +248,54 @@ function valider() {
     let ensemble = document.getElementById("ensemble")
     let combinaison = document.getElementById("combinaison")
 
-    let choice = false
+    let choice = [] //array for multiple choice
     let showAll = true
 
     if (robe.checked == true) {
-        choice = "robe"
+        choice.push("robe")
         showAll = false
-
     }
     if (blouse.checked == true) {
-        choice = "blouse"
+        choice.push("blouse")
         showAll = false
     }
     if (tshirt.checked == true) {
-        choice = "tshirt"
+        choice.push("tshirt")
         showAll = false
     }
     if (debardeur.checked == true) {
-        choice = "debardeur"
+        choice.push("debardeur")
         showAll = false
     }
     if (bas.checked == true) {
-        choice = "bas"
+        choice.push("bas")
         showAll = false
     }
     if (ensemble.checked == true) {
-        choice = "ensemble"
+        choice.push("ensemble")
         showAll = false
     }
     if (combinaison.checked == true) {
-        choice = "combinaison"
+        choice.push("combinaison")
         showAll = false
     }
 
-    fashion.innerHTML = ""
-    allArticlesArray.forEach(element => {
-        show = true
+    if (showAll == false) {
+        fashion.innerHTML = ""
 
-        if (showAll == false) {
-            show = false
-            element.category.forEach(filterCategories => {
-                if (filterCategories == choice) {
-                    show = true
+        allArticlesArray.forEach((element, key) => {
+            //The every() function behaves exactly like forEach(), except it stops iterating through the array whenever the callback function returns a falsy value.
+            element.category.every(cat => {
+                if (choice.indexOf(cat) != -1 ) {
+                    filterCards(element, key)
+                    return false
                 }
             })
-        }
-
-        if (show) {
-            filterCards(element)
-        }
-    });
-
+        });
+    }
 }
 
-function filterCards(element) {
-    let filterCount = 0
+function filterCards(element, key) {
     fashion.innerHTML += 
     `<div class="col-12 col-sm-6 col-lg-4 col-xl-3 " >
         <div class="card m-2">
@@ -324,12 +321,24 @@ function filterCards(element) {
                 <p class="txtSize">${element.name}</p>
                 <div class="d-flex  justify-content-between align-items-center ">
                     <div class="fw-bold">${element.price}€</div>
-                    <button id="${element.id}-btn" class="btn p-2 smoll-text" onclick="addToCart(${filterCount})">Ajouter au panier</button>
+                    <button id="${element.id}-btn" class="btn p-2 smoll-text" onclick="addToCart(${key})">Ajouter au panier</button>
                 </div>
             </div>
         </div>
     </div>
     `
-    filterCount++
-    console.log(filterCount)
 };
+
+function listenCartQuantity() {
+    let allQuantityInputs = document.querySelectorAll('input[data-cart-itemquantity]')
+    console.log(allQuantityInputs);
+    allQuantityInputs.forEach((input, key) => {
+        input.addEventListener('change', function () {
+            myCartArray[this.dataset.cartItemquantity].quantity = parseInt(this.value)
+            let subTotal = document.querySelector(`#card${this.dataset.cartItemquantity} [data-soustotal]`)
+            subTotal.innerText = (myCartArray[this.dataset.cartItemquantity].item.price * parseInt(this.value)) + '€'
+            total()
+        })
+    })
+}
+
